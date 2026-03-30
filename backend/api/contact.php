@@ -74,6 +74,7 @@ $email   = Validator::sanitize($input['email']);
 $phone   = Validator::sanitize($input['phone']);
 $service = Validator::sanitize($input['service']);
 $message = Validator::sanitize($input['message']);
+$lang    = in_array($input['lang'] ?? 'pt', ['pt', 'en']) ? $input['lang'] : 'pt';
 
 $mailer = new Mailer($config);
 
@@ -84,12 +85,14 @@ try {
         'phone'   => $phone,
         'service' => $service,
         'message' => $message,
+        'lang'    => $lang,
     ]);
 
     $mailer->sendContactConfirmation([
         'name'    => $name,
         'email'   => $email,
         'service' => $service,
+        'lang'    => $lang,
     ]);
 } catch (\Exception $e) {
     Bootstrap::respondError(500, 'Erro ao enviar email. Por favor tente novamente mais tarde.');

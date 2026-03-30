@@ -14,13 +14,14 @@
       <!-- Header -->
       <div class="flex items-center justify-between px-6 pt-6 pb-4 border-b border-er-navy/10">
         <div>
-          <h2 id="modal-title" class="font-display font-bold text-er-navy text-lg">Pedir Contacto</h2>
-          <p class="text-er-navy/60 text-xs mt-0.5">Ligamos-lhe em breve.</p>
+          <h2 id="modal-title" class="font-display font-bold text-er-navy text-lg" i18n="@@modal.title">Pedir Contacto</h2>
+          <p class="text-er-navy/60 text-xs mt-0.5" i18n="@@modal.subtitle">Ligamos-lhe em breve.</p>
         </div>
         <button
           (click)="close.emit()"
           class="text-er-navy/40 hover:text-er-navy transition-colors rounded-lg p-1.5 hover:bg-er-navy/5 focus:outline-none focus:ring-2 focus:ring-er-navy/20"
           aria-label="Fechar modal"
+          i18n-aria-label="@@modal.close.ariaLabel"
         >
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -37,9 +38,9 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h3 class="font-semibold text-er-navy text-base mb-1">Pedido recebido!</h3>
-            <p class="text-er-navy/60 text-sm">Entraremos em contacto consigo em breve.</p>
-            <button (click)="close.emit()" class="mt-5 btn-primary text-sm px-6 py-2.5">Fechar</button>
+            <h3 class="font-semibold text-er-navy text-base mb-1" i18n="@@modal.success.title">Pedido recebido!</h3>
+            <p class="text-er-navy/60 text-sm" i18n="@@modal.success.desc">Entraremos em contacto consigo em breve.</p>
+            <button (click)="close.emit()" class="mt-5 btn-primary text-sm px-6 py-2.5" i18n="@@modal.success.close">Fechar</button>
           </div>
         } @else {
           <form [formGroup]="form" (ngSubmit)="onSubmit()" class="space-y-4" novalidate>
@@ -47,7 +48,7 @@
             <!-- Name -->
             <div>
               <label for="qc-name" class="block text-sm font-semibold text-er-navy mb-1.5">
-                Nome <span class="text-red-500">*</span>
+                <span i18n="@@modal.name.label">Nome</span> <span class="text-red-500">*</span>
               </label>
               <input
                 id="qc-name"
@@ -55,19 +56,20 @@
                 formControlName="name"
                 autocomplete="name"
                 placeholder="O seu nome"
+                i18n-placeholder="@@modal.name.placeholder"
                 class="w-full rounded-lg border px-4 py-3 text-sm text-er-navy placeholder:text-er-navy/30 focus:outline-none focus:ring-2 focus:ring-er-blue/40 transition-colors"
                 [class.border-red-400]="isInvalid('name')"
                 [class.border-er-navy/20]="!isInvalid('name')"
               >
               @if (isInvalid('name')) {
-                <p class="mt-1 text-xs text-red-500">Nome obrigatório.</p>
+                <p class="mt-1 text-xs text-red-500" i18n="@@modal.name.error">Nome obrigatório.</p>
               }
             </div>
 
             <!-- Phone -->
             <div>
               <label for="qc-phone" class="block text-sm font-semibold text-er-navy mb-1.5">
-                Telefone <span class="text-red-500">*</span>
+                <span i18n="@@modal.phone.label">Telefone</span> <span class="text-red-500">*</span>
               </label>
               <input
                 id="qc-phone"
@@ -80,19 +82,18 @@
                 [class.border-er-navy/20]="!isInvalid('phone')"
               >
               @if (isInvalid('phone')) {
-                <p class="mt-1 text-xs text-red-500">Telefone obrigatório.</p>
+                <p class="mt-1 text-xs text-red-500" i18n="@@modal.phone.error">Telefone obrigatório.</p>
               }
             </div>
 
             <!-- Preferred time -->
             <div>
-              <label for="qc-time" class="block text-sm font-semibold text-er-navy mb-1.5">Melhor horário</label>
+              <label for="qc-time" class="block text-sm font-semibold text-er-navy mb-1.5" i18n="@@modal.time.label">Melhor horário</label>
               <select
                 id="qc-time"
                 formControlName="preferred_time"
                 class="w-full rounded-lg border border-er-navy/20 px-4 py-3 text-sm text-er-navy bg-white focus:outline-none focus:ring-2 focus:ring-er-blue/40"
               >
-                <option value="Qualquer horário">Qualquer horário</option>
                 @for (t of preferredTimes; track t) {
                   <option [value]="t">{{ t }}</option>
                 }
@@ -101,13 +102,13 @@
 
             <!-- Service -->
             <div>
-              <label for="qc-service" class="block text-sm font-semibold text-er-navy mb-1.5">Serviço</label>
+              <label for="qc-service" class="block text-sm font-semibold text-er-navy mb-1.5" i18n="@@modal.service.label">Serviço</label>
               <select
                 id="qc-service"
                 formControlName="service"
                 class="w-full rounded-lg border border-er-navy/20 px-4 py-3 text-sm text-er-navy bg-white focus:outline-none focus:ring-2 focus:ring-er-blue/40"
               >
-                <option value="">Seleccionar serviço *</option>
+                <option value="" i18n="@@modal.service.placeholder">Seleccionar serviço *</option>
                 @for (svc of services; track svc.id) {
                   <option [value]="svc.name">{{ svc.name }}</option>
                 }
@@ -139,9 +140,9 @@
                   <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                   <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
                 </svg>
-                A enviar…
+                <span i18n="@@modal.submit.sending">A enviar…</span>
               } @else {
-                Pedir Contacto
+                <span i18n="@@modal.submit.cta">Pedir Contacto</span>
               }
             </button>
 

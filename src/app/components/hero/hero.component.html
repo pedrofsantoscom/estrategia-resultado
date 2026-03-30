@@ -21,7 +21,7 @@
     <!-- Gold accent line -->
     <div class="flex items-center justify-center gap-3 mb-8">
       <div class="h-px w-12 bg-er-gold opacity-60"></div>
-      <span class="text-er-gold text-xs font-semibold tracking-[0.25em] uppercase">Guimarães, Portugal</span>
+      <span class="text-er-gold text-xs font-semibold tracking-[0.25em] uppercase" i18n="@@hero.location">Guimarães, Portugal</span>
       <div class="h-px w-12 bg-er-gold opacity-60"></div>
     </div>
 
@@ -32,10 +32,10 @@
     </h1>
 
     <!-- Tagline -->
-    <p class="text-white/80 text-xl md:text-2xl font-light mb-4 max-w-3xl mx-auto leading-relaxed">
+    <p class="text-white/80 text-xl md:text-2xl font-light mb-4 max-w-3xl mx-auto leading-relaxed" i18n="@@hero.tagline">
       Consultoria abrangente para empresas e particulares em Guimarães.
     </p>
-    <p class="text-white/60 text-base md:text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
+    <p class="text-white/60 text-base md:text-lg mb-10 max-w-2xl mx-auto leading-relaxed" i18n="@@hero.subtitle">
       Fiscalidade, Contabilidade, Jurídico, Seguros, Crédito e muito mais —
       tudo o que precisa, num só lugar.
     </p>
@@ -49,13 +49,13 @@
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
         </svg>
-        Pedir Contacto
+        <span i18n="@@hero.cta.contact">Pedir Contacto</span>
       </button>
       <button
         (click)="scrollToServices()"
         class="btn-outline-gold text-base px-8 py-4"
       >
-        Conhecer os Serviços
+        <span i18n="@@hero.cta.services">Conhecer os Serviços</span>
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
         </svg>
@@ -66,15 +66,15 @@
     <div class="mt-16 grid grid-cols-3 gap-6 max-w-2xl mx-auto">
       <div class="text-center">
         <div class="text-er-gold font-bold text-2xl md:text-3xl font-display">8+</div>
-        <div class="text-white/60 text-xs md:text-sm mt-1">Serviços</div>
+        <div class="text-white/60 text-xs md:text-sm mt-1" i18n="@@hero.stats.services">Serviços</div>
       </div>
       <div class="text-center border-x border-white/10">
         <div class="text-er-gold font-bold text-2xl md:text-3xl font-display">100%</div>
-        <div class="text-white/60 text-xs md:text-sm mt-1">Dedicação</div>
+        <div class="text-white/60 text-xs md:text-sm mt-1" i18n="@@hero.stats.dedication">Dedicação</div>
       </div>
       <div class="text-center">
         <div class="text-er-gold font-bold text-2xl md:text-3xl font-display">Local</div>
-        <div class="text-white/60 text-xs md:text-sm mt-1">Guimarães</div>
+        <div class="text-white/60 text-xs md:text-sm mt-1" i18n="@@hero.stats.location">Guimarães</div>
       </div>
     </div>
   </div>
@@ -84,6 +84,7 @@
     (click)="scrollToServices()"
     class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/40 hover:text-er-gold transition-colors animate-bounce focus:outline-none"
     aria-label="Rolar para baixo"
+    i18n-aria-label="@@hero.scroll.ariaLabel"
   >
     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />

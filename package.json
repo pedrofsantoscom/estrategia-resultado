@@ -22,6 +22,7 @@
     "@angular/compiler": "^21.2.3",
     "@angular/core": "^21.2.3",
     "@angular/forms": "^21.2.3",
+    "@angular/localize": "^21.2.6",
     "@angular/platform-browser": "^21.2.3",
     "@angular/platform-browser-dynamic": "^21.2.3",
     "@angular/platform-server": "^21.2.3",

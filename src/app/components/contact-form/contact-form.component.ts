@@ -76,6 +76,7 @@ export class ContactFormComponent implements OnChanges {
       const data = await lastValueFrom(
         this.api.submitContactForm({
           ...this.form.value,
+          lang: isPlatformBrowser(this.platformId) ? (document.documentElement.lang || 'pt') : 'pt',
           turnstile_token: this.getTurnstileToken(),
         })
       );
@@ -84,10 +85,10 @@ export class ContactFormComponent implements OnChanges {
         this.submitted.set(true);
         this.form.reset();
       } else {
-        this.error.set(data.error ?? 'Ocorreu um erro. Por favor tente novamente.');
+        this.error.set(data.error ?? $localize`:@@form.error.generic:Ocorreu um erro. Por favor tente novamente.`);
       }
     } catch {
-      this.error.set('Não foi possível enviar a mensagem. Verifique a sua ligação e tente novamente.');
+      this.error.set($localize`:@@form.error.network:Não foi possível enviar a mensagem. Verifique a sua ligação e tente novamente.`);
     } finally {
       this.submitting.set(false);
     }

@@ -3,10 +3,10 @@
 
     <!-- Section header -->
     <div class="text-center mb-12">
-      <p class="text-er-gold font-semibold text-sm tracking-widest uppercase mb-3">Onde estamos</p>
-      <h2 class="section-heading mb-4">Localização</h2>
+      <p class="text-er-gold font-semibold text-sm tracking-widest uppercase mb-3" i18n="@@location.label">Onde estamos</p>
+      <h2 class="section-heading mb-4" i18n="@@location.heading">Localização</h2>
       <div class="gold-divider mx-auto mb-5"></div>
-      <p class="section-subheading max-w-xl mx-auto">
+      <p class="section-subheading max-w-xl mx-auto" i18n="@@location.subheading">
         Encontre-nos no coração de Guimarães, cidade Berço de Portugal.
       </p>
     </div>
@@ -15,7 +15,7 @@
 
       <!-- Address info -->
       <div class="bg-er-cream rounded-2xl p-8 lg:p-10">
-        <h3 class="font-display font-bold text-er-navy text-xl mb-6">Como nos encontrar</h3>
+        <h3 class="font-display font-bold text-er-navy text-xl mb-6" i18n="@@location.findUs">Como nos encontrar</h3>
 
         <div class="space-y-5">
           <div class="flex gap-4">
@@ -26,7 +26,7 @@
               </svg>
             </div>
             <div>
-              <p class="font-semibold text-er-navy text-sm mb-0.5">Morada</p>
+              <p class="font-semibold text-er-navy text-sm mb-0.5" i18n="@@location.address.label">Morada</p>
               <p class="text-er-navy/70 text-sm leading-relaxed">Guimarães, Portugal</p>
             </div>
           </div>
@@ -38,7 +38,7 @@
               </svg>
             </div>
             <div>
-              <p class="font-semibold text-er-navy text-sm mb-0.5">Telefone</p>
+              <p class="font-semibold text-er-navy text-sm mb-0.5" i18n="@@location.phone.label">Telefone</p>
               <a href="tel:+351000000000" class="text-er-blue hover:text-er-gold text-sm transition-colors">+351 000 000 000</a>
             </div>
           </div>
@@ -62,8 +62,8 @@
               </svg>
             </div>
             <div>
-              <p class="font-semibold text-er-navy text-sm mb-0.5">Horário</p>
-              <p class="text-er-navy/70 text-sm">Segunda a Sexta: 9h00 – 18h00</p>
+              <p class="font-semibold text-er-navy text-sm mb-0.5" i18n="@@location.hours.label">Horário</p>
+              <p class="text-er-navy/70 text-sm" i18n="@@location.hours.value">Segunda a Sexta: 9h00 – 18h00</p>
             </div>
           </div>
         </div>
@@ -73,6 +73,7 @@
       <div class="rounded-2xl overflow-hidden shadow-lg" style="height: 380px;">
         <iframe
           title="Localização Estratégia &amp; Resultado em Guimarães"
+          i18n-title="@@location.map.title"
           width="100%"
           height="100%"
           style="border:0;"

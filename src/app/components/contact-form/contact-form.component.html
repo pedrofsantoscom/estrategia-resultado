@@ -3,10 +3,10 @@
 
     <!-- Section header -->
     <div class="text-center mb-12">
-      <p class="text-er-gold font-semibold text-sm tracking-widest uppercase mb-3">Envie-nos uma mensagem</p>
-      <h2 class="section-heading mb-4">Formulário de Contacto</h2>
+      <p class="text-er-gold font-semibold text-sm tracking-widest uppercase mb-3" i18n="@@form.label">Envie-nos uma mensagem</p>
+      <h2 class="section-heading mb-4" i18n="@@form.heading">Formulário de Contacto</h2>
       <div class="gold-divider mx-auto mb-5"></div>
-      <p class="section-subheading max-w-lg mx-auto">
+      <p class="section-subheading max-w-lg mx-auto" i18n="@@form.subheading">
         Preencha o formulário e entraremos em contacto consigo o mais brevemente possível.
       </p>
     </div>
@@ -19,9 +19,9 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 class="font-display font-bold text-er-navy text-xl mb-2">Mensagem enviada!</h3>
-        <p class="text-er-navy/70 text-sm">Obrigado pelo seu contacto. Responderemos em breve.</p>
-        <button (click)="submitted.set(false)" class="mt-6 btn-primary text-sm px-6 py-2.5">
+        <h3 class="font-display font-bold text-er-navy text-xl mb-2" i18n="@@form.success.title">Mensagem enviada!</h3>
+        <p class="text-er-navy/70 text-sm" i18n="@@form.success.desc">Obrigado pelo seu contacto. Responderemos em breve.</p>
+        <button (click)="submitted.set(false)" class="mt-6 btn-primary text-sm px-6 py-2.5" i18n="@@form.success.again">
           Enviar outra mensagem
         </button>
       </div>
@@ -33,7 +33,7 @@
           <!-- Name -->
           <div>
             <label for="cf-name" class="block text-sm font-semibold text-er-navy mb-1.5">
-              Nome <span class="text-red-500">*</span>
+              <span i18n="@@form.name.label">Nome</span> <span class="text-red-500">*</span>
             </label>
             <input
               id="cf-name"
@@ -41,12 +41,13 @@
               formControlName="name"
               autocomplete="name"
               placeholder="O seu nome"
+              i18n-placeholder="@@form.name.placeholder"
               class="w-full rounded-lg border px-4 py-3 text-sm text-er-navy placeholder:text-er-navy/30 focus:outline-none focus:ring-2 focus:ring-er-blue/40 transition-colors"
               [class.border-red-400]="isInvalid('name')"
               [class.border-er-navy/20]="!isInvalid('name')"
             >
             @if (isInvalid('name')) {
-              <p class="mt-1 text-xs text-red-500">Nome obrigatório (mínimo 2 caracteres).</p>
+              <p class="mt-1 text-xs text-red-500" i18n="@@form.name.error">Nome obrigatório (mínimo 2 caracteres).</p>
             }
           </div>
 
@@ -61,12 +62,13 @@
               formControlName="email"
               autocomplete="email"
               placeholder="O seu email"
+              i18n-placeholder="@@form.email.placeholder"
               class="w-full rounded-lg border px-4 py-3 text-sm text-er-navy placeholder:text-er-navy/30 focus:outline-none focus:ring-2 focus:ring-er-blue/40 transition-colors"
               [class.border-red-400]="isInvalid('email')"
               [class.border-er-navy/20]="!isInvalid('email')"
             >
             @if (isInvalid('email')) {
-              <p class="mt-1 text-xs text-red-500">Email inválido ou obrigatório.</p>
+              <p class="mt-1 text-xs text-red-500" i18n="@@form.email.error">Email inválido ou obrigatório.</p>
             }
           </div>
         </div>
@@ -75,7 +77,7 @@
           <!-- Phone -->
           <div>
             <label for="cf-phone" class="block text-sm font-semibold text-er-navy mb-1.5">
-              Telefone <span class="text-red-500">*</span>
+              <span i18n="@@form.phone.label">Telefone</span> <span class="text-red-500">*</span>
             </label>
             <input
               id="cf-phone"
@@ -88,19 +90,19 @@
               [class.border-er-navy/20]="!isInvalid('phone')"
             >
             @if (isInvalid('phone')) {
-              <p class="mt-1 text-xs text-red-500">Telefone obrigatório.</p>
+              <p class="mt-1 text-xs text-red-500" i18n="@@form.phone.error">Telefone obrigatório.</p>
             }
           </div>
 
           <!-- Service -->
           <div>
-            <label for="cf-service" class="block text-sm font-semibold text-er-navy mb-1.5">Serviço</label>
+            <label for="cf-service" class="block text-sm font-semibold text-er-navy mb-1.5" i18n="@@form.service.label">Serviço</label>
             <select
               id="cf-service"
               formControlName="service"
               class="w-full rounded-lg border border-er-navy/20 px-4 py-3 text-sm text-er-navy bg-white focus:outline-none focus:ring-2 focus:ring-er-blue/40 transition-colors"
             >
-              <option value="">Seleccionar serviço *</option>
+              <option value="" i18n="@@form.service.placeholder">Seleccionar serviço *</option>
               @for (svc of services; track svc.id) {
                 <option [value]="svc.name">{{ svc.name }}</option>
               }
@@ -111,19 +113,20 @@
         <!-- Message -->
         <div>
           <label for="cf-message" class="block text-sm font-semibold text-er-navy mb-1.5">
-            Mensagem <span class="text-red-500">*</span>
+            <span i18n="@@form.message.label">Mensagem</span> <span class="text-red-500">*</span>
           </label>
           <textarea
             id="cf-message"
             formControlName="message"
             rows="4"
             placeholder="Descreva como podemos ajudar..."
+            i18n-placeholder="@@form.message.placeholder"
             class="w-full rounded-lg border px-4 py-3 text-sm text-er-navy placeholder:text-er-navy/30 focus:outline-none focus:ring-2 focus:ring-er-blue/40 transition-colors resize-none"
             [class.border-red-400]="isInvalid('message')"
             [class.border-er-navy/20]="!isInvalid('message')"
           ></textarea>
           @if (isInvalid('message')) {
-            <p class="mt-1 text-xs text-red-500">Mensagem obrigatória (mínimo 10 caracteres).</p>
+            <p class="mt-1 text-xs text-red-500" i18n="@@form.message.error">Mensagem obrigatória (mínimo 10 caracteres).</p>
           }
         </div>
 
@@ -152,9 +155,9 @@
               <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
               <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
             </svg>
-            A enviar…
+            <span i18n="@@form.submit.sending">A enviar…</span>
           } @else {
-            Enviar Mensagem
+            <span i18n="@@form.submit.cta">Enviar Mensagem</span>
           }
         </button>
 

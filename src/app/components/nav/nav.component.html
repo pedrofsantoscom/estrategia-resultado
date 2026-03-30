@@ -12,6 +12,7 @@
         (click)="scrollTo('inicio')"
         class="flex-shrink-0 focus:outline-none"
         aria-label="Ir para o início"
+        i18n-aria-label="@@nav.logo.ariaLabel"
       >
         <span class="font-display font-bold text-white text-lg md:text-xl leading-tight">
           Estratégia<br class="hidden sm:block">&amp; Resultado
@@ -19,19 +20,22 @@
       </button>
 
       <!-- Desktop nav links -->
-      <div class="hidden md:flex items-center gap-6 lg:gap-8">
-        <button (click)="scrollTo('servicos')" class="text-white/90 hover:text-er-gold text-sm font-medium transition-colors duration-200">Serviços</button>
-        <button (click)="scrollTo('sobre-nos')" class="text-white/90 hover:text-er-gold text-sm font-medium transition-colors duration-200">Sobre Nós</button>
-        <button (click)="scrollTo('localizacao')" class="text-white/90 hover:text-er-gold text-sm font-medium transition-colors duration-200">Localização</button>
-        <button (click)="scrollTo('contactos')" class="text-white/90 hover:text-er-gold text-sm font-medium transition-colors duration-200">Contactos</button>
-        <button (click)="scrollTo('formulario')" class="text-white/90 hover:text-er-gold text-sm font-medium transition-colors duration-200">Formulário</button>
+      <div class="hidden md:flex items-center gap-5 lg:gap-7">
+        <button (click)="scrollTo('servicos')" class="text-white/90 hover:text-er-gold text-sm font-medium transition-colors duration-200" i18n="@@nav.services">Serviços</button>
+        <button (click)="scrollTo('sobre-nos')" class="text-white/90 hover:text-er-gold text-sm font-medium transition-colors duration-200" i18n="@@nav.about">Sobre Nós</button>
+        <button (click)="scrollTo('localizacao')" class="text-white/90 hover:text-er-gold text-sm font-medium transition-colors duration-200" i18n="@@nav.location">Localização</button>
+        <button (click)="scrollTo('contactos')" class="text-white/90 hover:text-er-gold text-sm font-medium transition-colors duration-200" i18n="@@nav.contacts">Contactos</button>
+        <button (click)="scrollTo('formulario')" class="text-white/90 hover:text-er-gold text-sm font-medium transition-colors duration-200" i18n="@@nav.form">Formulário</button>
       </div>
 
-      <!-- CTA + Hamburger -->
+      <!-- Language switcher + CTA + Hamburger -->
       <div class="flex items-center gap-3">
+        <app-lang-switcher class="hidden sm:block"></app-lang-switcher>
+
         <button
           (click)="requestContact()"
           class="btn-primary text-xs sm:text-sm px-4 py-2 sm:px-5 sm:py-2.5"
+          i18n="@@nav.cta"
         >
           Pedir Contacto
         </button>
@@ -42,6 +46,7 @@
           class="md:hidden text-white p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-er-gold"
           [attr.aria-expanded]="menuOpen()"
           aria-label="Abrir menu"
+          i18n-aria-label="@@nav.menu.ariaLabel"
         >
           @if (menuOpen()) {
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -61,11 +66,14 @@
   @if (menuOpen()) {
     <div class="md:hidden bg-er-navy border-t border-white/10">
       <div class="px-4 py-3 space-y-1">
-        <button (click)="scrollTo('servicos')" class="block w-full text-left px-3 py-2.5 text-white/90 hover:text-er-gold hover:bg-white/5 rounded-lg text-sm font-medium transition-colors">Serviços</button>
-        <button (click)="scrollTo('sobre-nos')" class="block w-full text-left px-3 py-2.5 text-white/90 hover:text-er-gold hover:bg-white/5 rounded-lg text-sm font-medium transition-colors">Sobre Nós</button>
-        <button (click)="scrollTo('localizacao')" class="block w-full text-left px-3 py-2.5 text-white/90 hover:text-er-gold hover:bg-white/5 rounded-lg text-sm font-medium transition-colors">Localização</button>
-        <button (click)="scrollTo('contactos')" class="block w-full text-left px-3 py-2.5 text-white/90 hover:text-er-gold hover:bg-white/5 rounded-lg text-sm font-medium transition-colors">Contactos</button>
-        <button (click)="scrollTo('formulario')" class="block w-full text-left px-3 py-2.5 text-white/90 hover:text-er-gold hover:bg-white/5 rounded-lg text-sm font-medium transition-colors">Formulário</button>
+        <button (click)="scrollTo('servicos')" class="block w-full text-left px-3 py-2.5 text-white/90 hover:text-er-gold hover:bg-white/5 rounded-lg text-sm font-medium transition-colors" i18n="@@nav.services">Serviços</button>
+        <button (click)="scrollTo('sobre-nos')" class="block w-full text-left px-3 py-2.5 text-white/90 hover:text-er-gold hover:bg-white/5 rounded-lg text-sm font-medium transition-colors" i18n="@@nav.about">Sobre Nós</button>
+        <button (click)="scrollTo('localizacao')" class="block w-full text-left px-3 py-2.5 text-white/90 hover:text-er-gold hover:bg-white/5 rounded-lg text-sm font-medium transition-colors" i18n="@@nav.location">Localização</button>
+        <button (click)="scrollTo('contactos')" class="block w-full text-left px-3 py-2.5 text-white/90 hover:text-er-gold hover:bg-white/5 rounded-lg text-sm font-medium transition-colors" i18n="@@nav.contacts">Contactos</button>
+        <button (click)="scrollTo('formulario')" class="block w-full text-left px-3 py-2.5 text-white/90 hover:text-er-gold hover:bg-white/5 rounded-lg text-sm font-medium transition-colors" i18n="@@nav.form">Formulário</button>
+        <div class="px-3 py-2">
+          <app-lang-switcher></app-lang-switcher>
+        </div>
       </div>
     </div>
   }
