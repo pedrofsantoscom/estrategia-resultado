@@ -320,6 +320,60 @@ jobs:
 - [ ] Smoke testing (formulários, links, mapa)
 - [ ] Verificação de emails SMTP
 
+### Fase 7 — Internacionalização (i18n)
+
+> Padrão de referência: setup `@angular/localize` do projecto `feelathomehouse-v2`
+
+#### Setup Angular i18n
+- [ ] Instalar `@angular/localize` e configurar `angular.json` com `i18nLocales`
+- [ ] Português (PT-PT) como língua principal/padrão (`pt-PT`)
+- [ ] Inglês (EN) como língua secundária (`en`)
+- [ ] Configurar build separado por locale: `pnpm build --localize`
+- [ ] Adaptar CI/CD (GitHub Actions) para gerar artefactos para ambos os locales e fazer deploy nas pastas correctas
+
+#### Language Switcher
+- [ ] Componente de seleção de idioma na navbar (botão PT / EN)
+- [ ] Persiste a preferência do utilizador (localStorage)
+- [ ] Detecta o idioma do browser no primeiro acesso (`navigator.language`)
+- [ ] Redireciona para o prefixo de URL correcto (`/pt/` ou `/en/`)
+
+#### Tradução de Conteúdo Estático (Frontend)
+- [ ] Hero section: tagline, CTA
+- [ ] Descrições dos 8 cards de serviços
+- [ ] Secção Sobre Nós: texto completo, missão e valores
+- [ ] Secção Localização: textos auxiliares
+- [ ] Secção Contactos: labels e textos
+- [ ] Formulário de Contacto: labels, placeholders, mensagens de validação, mensagens de sucesso/erro
+- [ ] Modal de Pedido Rápido: labels, placeholders, mensagens
+- [ ] Footer: links, textos legais, copyright
+
+#### Tradução de Templates de Email (Backend PHP)
+- [ ] Detectar idioma preferido a partir do campo enviado pelo frontend (`lang`)
+- [ ] Email de notificação ao dono: manter em PT (ou adicionar indicador do idioma do contacto)
+- [ ] Email de confirmação ao remetente: enviar no idioma do utilizador (PT ou EN)
+- [ ] Separar templates PHP em `email-pt.php` e `email-en.php` (ou estrutura de arrays por locale)
+
+#### SEO Multilingue
+- [ ] Tags `hreflang` no `<head>`: `<link rel="alternate" hreflang="pt" href="/pt/">` e `<link rel="alternate" hreflang="en" href="/en/">`
+- [ ] `hreflang="x-default"` apontando para PT-PT
+- [ ] Meta descriptions separadas por idioma (`<meta name="description">`)
+- [ ] Open Graph tags por idioma (`og:locale`, `og:locale:alternate`)
+- [ ] Canonical URL correcta por locale
+
+#### Estratégia de URLs
+- [ ] Prefixos de URL: `/pt/` para Português e `/en/` para Inglês
+- [ ] Redireccionamento automático de `/` para o locale detectado
+- [ ] Configurar `angular.json` com `baseHref` por locale (`/pt/` e `/en/`)
+- [ ] Configurar rewrite rules no `.htaccess` (shared hosting) para servir os artefactos correctos
+
+#### Testes E2E (Playwright)
+- [ ] Testar language switcher: click PT → URL `/pt/`, click EN → URL `/en/`
+- [ ] Verificar que o conteúdo muda de idioma após troca
+- [ ] Cobrir os testes existentes da Fase 5 em ambos os locales
+- [ ] Verificar tags `hreflang` presentes no HTML de cada locale
+- [ ] Verificar que meta descriptions diferem entre locales
+- [ ] Testar formulário de contacto em EN (labels, validação, mensagem de sucesso)
+
 ---
 
 ## Estrutura de Directórios (prevista)
