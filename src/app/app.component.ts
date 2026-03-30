@@ -16,6 +16,8 @@ import { ContactsComponent } from './components/contacts/contacts.component';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { QuickContactModalComponent } from './components/quick-contact-modal/quick-contact-modal.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { CtaSectionComponent } from './components/cta-section/cta-section.component';
+import { FloatingButtonsComponent } from './components/floating-buttons/floating-buttons.component';
 
 @Component({
   selector: 'app-root',
@@ -30,6 +32,8 @@ import { FooterComponent } from './components/footer/footer.component';
     ContactFormComponent,
     QuickContactModalComponent,
     FooterComponent,
+    CtaSectionComponent,
+    FloatingButtonsComponent,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
