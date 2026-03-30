@@ -41,6 +41,17 @@ class Validator
         return $this;
     }
 
+    /**
+     * @param array<int|string, mixed> $list
+     */
+    public function inList(string $field, mixed $value, array $list): static
+    {
+        if (!empty($value) && !in_array($value, $list, true)) {
+            $this->errors[$field] = "O valor selecionado para {$field} não é válido.";
+        }
+        return $this;
+    }
+
     public function isValid(): bool
     {
         return empty($this->errors);
@@ -48,6 +59,12 @@ class Validator
 
     /** @return array<string, string> */
     public function errors(): array
+    {
+        return $this->errors;
+    }
+
+    /** @return array<string, string> */
+    public function getErrors(): array
     {
         return $this->errors;
     }

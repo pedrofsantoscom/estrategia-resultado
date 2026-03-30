@@ -43,7 +43,7 @@ Thumbs.db
 # PHP
 backend/config.php
 backend/vendor/
-backend/tmp/*.json
+backend/tmp/**/*.json
 
 # Misc
 *.pem

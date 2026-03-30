@@ -6,40 +6,37 @@ namespace App;
 
 class RateLimiter
 {
-    private string $storageDir;
-    private int $maxRequests;
-    private int $windowSeconds;
-
-    public function __construct(
-        string $storageDir,
-        int $maxRequests = 5,
-        int $windowSeconds = 3600
-    ) {
-        $this->storageDir   = rtrim($storageDir, '/');
-        $this->maxRequests  = $maxRequests;
-        $this->windowSeconds = $windowSeconds;
+    public function __construct(private readonly string $storageDir)
+    {
+        if (!is_dir($this->storageDir)) {
+            mkdir($this->storageDir, 0750, true);
+        }
     }
 
     /**
-     * Returns true if the request is allowed, false if rate limit is exceeded.
+     * Returns true if the request is allowed, false if the rate limit is exceeded.
+     *
+     * @param string $key           Unique key (e.g. "contact:192.168.1.1")
+     * @param int    $limit         Maximum requests allowed in the window
+     * @param int    $windowSeconds Rolling window size in seconds
      */
-    public function allow(string $ip): bool
+    public function isAllowed(string $key, int $limit, int $windowSeconds): bool
     {
-        $file = $this->storageDir . '/' . md5($ip) . '.json';
+        $safeKey = preg_replace('/[^a-zA-Z0-9_\-]/', '_', $key);
+        $file    = $this->storageDir . '/' . $safeKey . '.json';
 
         $now    = time();
-        $window = $now - $this->windowSeconds;
+        $cutoff = $now - $windowSeconds;
 
         $timestamps = [];
-
         if (file_exists($file)) {
             $data = json_decode((string) file_get_contents($file), true);
             if (is_array($data)) {
-                $timestamps = array_filter($data, fn(int $t) => $t > $window);
+                $timestamps = array_filter($data, fn(int $t) => $t > $cutoff);
             }
         }
 
-        if (count($timestamps) >= $this->maxRequests) {
+        if (count($timestamps) >= $limit) {
             return false;
         }
 
