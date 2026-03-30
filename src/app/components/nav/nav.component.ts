@@ -1,10 +1,11 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Output, signal, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { LangSwitcherComponent } from '../lang-switcher/lang-switcher.component';
 
 @Component({
   selector: 'app-nav',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, LangSwitcherComponent],
   templateUrl: './nav.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

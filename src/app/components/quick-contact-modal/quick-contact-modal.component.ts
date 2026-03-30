@@ -35,10 +35,11 @@ export class QuickContactModalComponent implements OnChanges {
   services = SERVICES;
   turnstileSiteKey = environment.turnstileSiteKey;
   preferredTimes = [
-    'Manhã (9h – 12h)',
-    'Almoço (12h – 14h)',
-    'Tarde (14h – 17h)',
-    'Final do dia (17h – 18h)',
+    $localize`:@@modal.time.any:Qualquer horário`,
+    $localize`:@@modal.time.morning:Manhã (9h – 12h)`,
+    $localize`:@@modal.time.lunch:Almoço (12h – 14h)`,
+    $localize`:@@modal.time.afternoon:Tarde (14h – 17h)`,
+    $localize`:@@modal.time.evening:Final do dia (17h – 18h)`,
   ];
 
   form: FormGroup;
@@ -50,7 +51,7 @@ export class QuickContactModalComponent implements OnChanges {
     this.form = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
       phone: ['', Validators.required],
-      preferred_time: ['Qualquer horário'],
+      preferred_time: [this.preferredTimes[0]],
       service: ['', Validators.required],
     });
   }
@@ -96,6 +97,7 @@ export class QuickContactModalComponent implements OnChanges {
       const data = await lastValueFrom(
         this.api.submitContactRequest({
           ...this.form.value,
+          lang: document.documentElement.lang || 'pt',
           turnstile_token: this.getTurnstileToken(),
         })
       );
@@ -104,10 +106,10 @@ export class QuickContactModalComponent implements OnChanges {
         this.submitted.set(true);
         this.form.reset();
       } else {
-        this.error.set(data.error ?? 'Ocorreu um erro. Por favor tente novamente.');
+        this.error.set(data.error ?? $localize`:@@modal.error.generic:Ocorreu um erro. Por favor tente novamente.`);
       }
     } catch {
-      this.error.set('Não foi possível enviar o pedido. Verifique a sua ligação e tente novamente.');
+      this.error.set($localize`:@@modal.error.network:Não foi possível enviar o pedido. Verifique a sua ligação e tente novamente.`);
     } finally {
       this.submitting.set(false);
     }

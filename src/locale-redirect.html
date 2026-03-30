@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Estratégia &amp; Resultado</title>
+  <script>
+    (function () {
+      var saved = '';
+      try { saved = localStorage.getItem('lang') || ''; } catch (e) {}
+      var lang = saved || (navigator.language || navigator.userLanguage || 'pt').toLowerCase();
+      var dest = lang.startsWith('en') ? '/en/' : '/pt/';
+      window.location.replace(dest);
+    })();
+  </script>
+  <noscript>
+    <meta http-equiv="refresh" content="0;url=/pt/">
+  </noscript>
+</head>
+<body></body>
+</html>

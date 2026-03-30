@@ -15,14 +15,15 @@ class Mailer
     /**
      * Send owner notification for a full contact form submission.
      *
-     * @param array{name: string, email: string, phone: string, service: string, message: string} $data
+     * @param array{name: string, email: string, phone: string, service: string, message: string, lang?: string} $data
      */
     public function sendContactNotification(array $data): void
     {
+        $lang = $data['lang'] ?? 'pt';
         $mail = $this->createMailer();
         $mail->addAddress((string) $this->config['notification_email']);
         $mail->Subject = "Novo Contacto: {$data['name']} — {$data['service']}";
-        $mail->Body    = $this->buildContactOwnerBody($data);
+        $mail->Body    = $this->buildContactOwnerBody($data, $lang);
         $mail->AltBody = $this->buildContactOwnerText($data);
 
         if (!$mail->send()) {
@@ -33,15 +34,22 @@ class Mailer
     /**
      * Send confirmation email to the person who submitted the contact form.
      *
-     * @param array{name: string, email: string, service: string} $data
+     * @param array{name: string, email: string, service: string, lang?: string} $data
      */
     public function sendContactConfirmation(array $data): void
     {
+        $lang = $data['lang'] ?? 'pt';
         $mail = $this->createMailer();
         $mail->addAddress($data['email'], $data['name']);
-        $mail->Subject = 'Recebemos o seu pedido — Estratégia & Resultado';
-        $mail->Body    = $this->buildContactConfirmationBody($data);
-        $mail->AltBody = $this->buildContactConfirmationText($data);
+        $mail->Subject = $lang === 'en'
+            ? 'We received your request — Estratégia & Resultado'
+            : 'Recebemos o seu pedido — Estratégia & Resultado';
+        $mail->Body    = $lang === 'en'
+            ? $this->buildContactConfirmationBodyEn($data)
+            : $this->buildContactConfirmationBody($data);
+        $mail->AltBody = $lang === 'en'
+            ? $this->buildContactConfirmationTextEn($data)
+            : $this->buildContactConfirmationText($data);
 
         if (!$mail->send()) {
             throw new MailerException($mail->ErrorInfo);
@@ -51,14 +59,15 @@ class Mailer
     /**
      * Send owner notification for a callback (quick contact) request.
      *
-     * @param array{name: string, phone: string, preferred_time: string, service: string} $data
+     * @param array{name: string, phone: string, preferred_time: string, service: string, lang?: string} $data
      */
     public function sendCallbackNotification(array $data): void
     {
+        $lang = $data['lang'] ?? 'pt';
         $mail = $this->createMailer();
         $mail->addAddress((string) $this->config['notification_email']);
         $mail->Subject = "Pedido de Contacto: {$data['name']} — {$data['service']}";
-        $mail->Body    = $this->buildCallbackOwnerBody($data);
+        $mail->Body    = $this->buildCallbackOwnerBody($data, $lang);
         $mail->AltBody = $this->buildCallbackOwnerText($data);
 
         if (!$mail->send()) {
@@ -84,7 +93,7 @@ class Mailer
     }
 
     /** @param array<string, string> $d */
-    private function buildContactOwnerBody(array $d): string
+    private function buildContactOwnerBody(array $d, string $lang = 'pt'): string
     {
         $name    = htmlspecialchars($d['name'], ENT_QUOTES, 'UTF-8');
         $email   = htmlspecialchars($d['email'], ENT_QUOTES, 'UTF-8');
@@ -93,6 +102,9 @@ class Mailer
         $message = nl2br(htmlspecialchars($d['message'], ENT_QUOTES, 'UTF-8'));
         $waPhone = preg_replace('/[^0-9]/', '', $d['phone']);
         $waText  = rawurlencode("Olá {$d['name']}, obrigado pelo seu contacto sobre {$d['service']}...");
+        $langBadge = $lang === 'en'
+            ? '<span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:12px;font-size:11px;font-weight:bold;margin-left:8px">EN</span>'
+            : '';
 
         return <<<HTML
         <!DOCTYPE html>
@@ -100,7 +112,7 @@ class Mailer
         <head><meta charset="UTF-8"></head>
         <body style="font-family:Arial,sans-serif;color:#333;max-width:600px;margin:0 auto;padding:24px;background:#fff">
           <div style="border-top:4px solid #C8972E;padding-top:16px;margin-bottom:24px">
-            <h2 style="color:#1A2744;margin:0">Novo Pedido de Contacto</h2>
+            <h2 style="color:#1A2744;margin:0">Novo Pedido de Contacto $langBadge</h2>
             <p style="color:#888;margin:4px 0 0">Via formulário de contacto — estrategiaeresultado.pt</p>
           </div>
           <table style="width:100%;border-collapse:collapse;margin-bottom:24px">
@@ -160,6 +172,7 @@ class Mailer
             "Telefone : {$d['phone']}",
             "Serviço  : {$d['service']}",
             "Mensagem : {$d['message']}",
+            "Idioma   : " . ($d['lang'] ?? 'pt'),
         ]);
     }
 
@@ -193,6 +206,35 @@ class Mailer
     }
 
     /** @param array<string, string> $d */
+    private function buildContactConfirmationBodyEn(array $d): string
+    {
+        $name    = htmlspecialchars($d['name'], ENT_QUOTES, 'UTF-8');
+        $service = htmlspecialchars($d['service'], ENT_QUOTES, 'UTF-8');
+
+        return <<<HTML
+        <!DOCTYPE html>
+        <html lang="en">
+        <head><meta charset="UTF-8"></head>
+        <body style="font-family:Arial,sans-serif;color:#333;max-width:600px;margin:0 auto;padding:24px;background:#fff">
+          <div style="border-top:4px solid #C8972E;padding-top:16px;margin-bottom:24px">
+            <h2 style="color:#1A2744;margin:0">We received your request</h2>
+          </div>
+          <p>Dear <strong>$name</strong>,</p>
+          <p>Thank you for contacting us about <strong style="color:#1A2744">$service</strong>.</p>
+          <p>We have received your message and will get back to you shortly.</p>
+          <p style="margin-top:32px">Kind regards,<br>
+            <strong style="color:#1A2744">Estratégia &amp; Resultado</strong>
+          </p>
+          <p style="margin-top:40px;color:#aaa;font-size:11px;border-top:1px solid #eee;padding-top:12px">
+            This is an automated email — please do not reply directly to this address.<br>
+            Estratégia &amp; Resultado · estrategiaeresultado.pt
+          </p>
+        </body>
+        </html>
+        HTML;
+    }
+
+    /** @param array<string, string> $d */
     private function buildContactConfirmationText(array $d): string
     {
         return implode("\n", [
@@ -207,7 +249,21 @@ class Mailer
     }
 
     /** @param array<string, string> $d */
-    private function buildCallbackOwnerBody(array $d): string
+    private function buildContactConfirmationTextEn(array $d): string
+    {
+        return implode("\n", [
+            "Dear {$d['name']},",
+            '',
+            "Thank you for contacting us about {$d['service']}.",
+            'We have received your message and will get back to you shortly.',
+            '',
+            'Kind regards,',
+            'Estratégia & Resultado',
+        ]);
+    }
+
+    /** @param array<string, string> $d */
+    private function buildCallbackOwnerBody(array $d, string $lang = 'pt'): string
     {
         $name          = htmlspecialchars($d['name'], ENT_QUOTES, 'UTF-8');
         $phone         = htmlspecialchars($d['phone'], ENT_QUOTES, 'UTF-8');
@@ -215,6 +271,9 @@ class Mailer
         $service       = htmlspecialchars($d['service'], ENT_QUOTES, 'UTF-8');
         $waPhone       = preg_replace('/[^0-9]/', '', $d['phone']);
         $waText        = rawurlencode("Olá {$d['name']}, somos da Estratégia & Resultado e gostaríamos de falar consigo sobre {$d['service']}.");
+        $langBadge = $lang === 'en'
+            ? '<span style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:12px;font-size:11px;font-weight:bold;margin-left:8px">EN</span>'
+            : '';
 
         return <<<HTML
         <!DOCTYPE html>
@@ -222,7 +281,7 @@ class Mailer
         <head><meta charset="UTF-8"></head>
         <body style="font-family:Arial,sans-serif;color:#333;max-width:600px;margin:0 auto;padding:24px;background:#fff">
           <div style="border-top:4px solid #C8972E;padding-top:16px;margin-bottom:24px">
-            <h2 style="color:#1A2744;margin:0">Pedido de Contacto Telefónico</h2>
+            <h2 style="color:#1A2744;margin:0">Pedido de Contacto Telefónico $langBadge</h2>
             <p style="color:#888;margin:4px 0 0">Via formulário rápido — estrategiaeresultado.pt</p>
           </div>
           <p>Um visitante solicitou ser contactado por telefone:</p>
@@ -274,6 +333,7 @@ class Mailer
             "Telefone         : {$d['phone']}",
             "Horário preferido: {$d['preferred_time']}",
             "Serviço          : {$d['service']}",
+            "Idioma           : " . ($d['lang'] ?? 'pt'),
         ]);
     }
 }

@@ -71,6 +71,7 @@ $name          = Validator::sanitize($input['name']);
 $phone         = Validator::sanitize($input['phone']);
 $preferredTime = Validator::sanitize($input['preferred_time']);
 $service       = Validator::sanitize($input['service']);
+$lang          = in_array($input['lang'] ?? 'pt', ['pt', 'en']) ? $input['lang'] : 'pt';
 
 $mailer = new Mailer($config);
 
@@ -80,6 +81,7 @@ try {
         'phone'          => $phone,
         'preferred_time' => $preferredTime,
         'service'        => $service,
+        'lang'           => $lang,
     ]);
 } catch (\Exception $e) {
     Bootstrap::respondError(500, 'Erro ao enviar email. Por favor tente novamente mais tarde.');

@@ -24,8 +24,14 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build frontend
+      - name: Build frontend (both locales)
         run: pnpm run build
+
+      - name: Fix lang attribute in EN build
+        run: sed -i 's/<html lang="pt"/<html lang="en"/g' dist/estrategia-resultado/browser/en/index.html
+
+      - name: Create root locale redirect
+        run: cp src/locale-redirect.html dist/estrategia-resultado/browser/index.html
 
       # --- Backend config ---
       - name: Generate backend config.php from template
@@ -39,8 +45,28 @@ jobs:
           sed -i "s|__MAIL_TO__|${{ secrets.MAIL_TO }}|g" config.php
           sed -i "s|__TURNSTILE_SECRET_KEY__|${{ secrets.TURNSTILE_SECRET_KEY }}|g" config.php
 
-      # --- Deploy frontend via FTP ---
-      - name: Deploy frontend via FTP
+      # --- Deploy PT locale via FTP ---
+      - name: Deploy PT locale via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASS }}
+          local-dir: dist/estrategia-resultado/browser/pt/
+          server-dir: ${{ secrets.FTP_SERVER_DIR }}pt/
+
+      # --- Deploy EN locale via FTP ---
+      - name: Deploy EN locale via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASS }}
+          local-dir: dist/estrategia-resultado/browser/en/
+          server-dir: ${{ secrets.FTP_SERVER_DIR }}en/
+
+      # --- Deploy root redirect via FTP ---
+      - name: Deploy root redirect via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_HOST }}
@@ -48,6 +74,9 @@ jobs:
           password: ${{ secrets.FTP_PASS }}
           local-dir: dist/estrategia-resultado/browser/
           server-dir: ${{ secrets.FTP_SERVER_DIR }}
+          exclude: |
+            **/*
+            !index.html
 
       # --- Deploy backend via FTP ---
       - name: Deploy backend via FTP

@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="pt" target-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="about.label" datatype="html">
+        <source>Sobre Nós</source>
+        <target>About Us</target>
+      </trans-unit>
+      <trans-unit id="about.heading" datatype="html">
+        <source> Confiança e Rigor<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/>ao Seu Serviço </source>
+        <target> Trust and Rigour<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/>at Your Service </target>
+      </trans-unit>
+      <trans-unit id="about.p1" datatype="html">
+        <source> A <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong class=&quot;text-white&quot;&gt;"/>Estratégia &amp; Resultado<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> é uma empresa de consultoria multidisciplinar sediada em Guimarães, dedicada a apoiar empresas e particulares na tomada de decisões mais inteligentes e na concretização dos seus objectivos. </source>
+        <target> <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong class=&quot;text-white&quot;&gt;"/>Estratégia &amp; Resultado<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> is a multidisciplinary consulting firm based in Guimarães, dedicated to supporting businesses and individuals in making smarter decisions and achieving their goals. </target>
+      </trans-unit>
+      <trans-unit id="about.p2" datatype="html">
+        <source> Com uma equipa experiente e focada em resultados, oferecemos um serviço personalizado que cobre todas as áreas críticas da vida empresarial e pessoal — desde a fiscalidade e contabilidade à consultoria jurídica, passando pelo apoio ao negócio e gestão de seguros. </source>
+        <target> With an experienced, results-focused team, we offer a personalised service covering all critical areas of business and personal life — from taxation and accounting to legal consulting, business support, and insurance management. </target>
+      </trans-unit>
+      <trans-unit id="about.p3" datatype="html">
+        <source> A nossa missão é simples: transformar desafios complexos em soluções claras, para que os nossos clientes possam crescer com confiança. </source>
+        <target> Our mission is simple: transform complex challenges into clear solutions, so our clients can grow with confidence. </target>
+      </trans-unit>
+      <trans-unit id="about.value.rigor.title" datatype="html">
+        <source>Rigor</source>
+        <target>Rigour</target>
+      </trans-unit>
+      <trans-unit id="about.value.rigor.desc" datatype="html">
+        <source>Exactidão e profissionalismo em cada serviço prestado.</source>
+        <target>Precision and professionalism in every service provided.</target>
+      </trans-unit>
+      <trans-unit id="about.value.proximity.title" datatype="html">
+        <source>Proximidade</source>
+        <target>Proximity</target>
+      </trans-unit>
+      <trans-unit id="about.value.proximity.desc" datatype="html">
+        <source>Relação próxima e de confiança com cada cliente.</source>
+        <target>A close and trusted relationship with each client.</target>
+      </trans-unit>
+      <trans-unit id="about.value.efficacy.title" datatype="html">
+        <source>Eficácia</source>
+        <target>Efficacy</target>
+      </trans-unit>
+      <trans-unit id="about.value.efficacy.desc" datatype="html">
+        <source>Soluções objectivas que geram resultados reais.</source>
+        <target>Objective solutions that deliver real results.</target>
+      </trans-unit>
+      <trans-unit id="about.value.confidentiality.title" datatype="html">
+        <source>Confidencialidade</source>
+        <target>Confidentiality</target>
+      </trans-unit>
+      <trans-unit id="about.value.confidentiality.desc" datatype="html">
+        <source>Sigilo profissional e protecção total dos dados.</source>
+        <target>Professional discretion and full data protection.</target>
+      </trans-unit>
+      <trans-unit id="form.label" datatype="html">
+        <source>Envie-nos uma mensagem</source>
+        <target>Send us a message</target>
+      </trans-unit>
+      <trans-unit id="form.heading" datatype="html">
+        <source>Formulário de Contacto</source>
+        <target>Contact Form</target>
+      </trans-unit>
+      <trans-unit id="form.subheading" datatype="html">
+        <source> Preencha o formulário e entraremos em contacto consigo o mais brevemente possível. </source>
+        <target> Fill in the form and we will get back to you as soon as possible. </target>
+      </trans-unit>
+      <trans-unit id="form.success.title" datatype="html">
+        <source>Mensagem enviada!</source>
+        <target>Message sent!</target>
+      </trans-unit>
+      <trans-unit id="form.success.desc" datatype="html">
+        <source>Obrigado pelo seu contacto. Responderemos em breve.</source>
+        <target>Thank you for your message. We will reply shortly.</target>
+      </trans-unit>
+      <trans-unit id="form.success.again" datatype="html">
+        <source> Enviar outra mensagem </source>
+        <target> Send another message </target>
+      </trans-unit>
+      <trans-unit id="form.name.label" datatype="html">
+        <source>Nome</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit id="form.name.placeholder" datatype="html">
+        <source>O seu nome</source>
+        <target>Your name</target>
+      </trans-unit>
+      <trans-unit id="form.name.error" datatype="html">
+        <source>Nome obrigatório (mínimo 2 caracteres).</source>
+        <target>Name required (minimum 2 characters).</target>
+      </trans-unit>
+      <trans-unit id="form.email.placeholder" datatype="html">
+        <source>O seu email</source>
+        <target>Your email</target>
+      </trans-unit>
+      <trans-unit id="form.email.error" datatype="html">
+        <source>Email inválido ou obrigatório.</source>
+        <target>Invalid or missing email.</target>
+      </trans-unit>
+      <trans-unit id="form.phone.label" datatype="html">
+        <source>Telefone</source>
+        <target>Phone</target>
+      </trans-unit>
+      <trans-unit id="form.phone.error" datatype="html">
+        <source>Telefone obrigatório.</source>
+        <target>Phone number required.</target>
+      </trans-unit>
+      <trans-unit id="form.service.label" datatype="html">
+        <source>Serviço</source>
+        <target>Service</target>
+      </trans-unit>
+      <trans-unit id="form.service.placeholder" datatype="html">
+        <source>Seleccionar serviço *</source>
+        <target>Select a service *</target>
+      </trans-unit>
+      <trans-unit id="form.message.label" datatype="html">
+        <source>Mensagem</source>
+        <target>Message</target>
+      </trans-unit>
+      <trans-unit id="form.message.placeholder" datatype="html">
+        <source>Descreva como podemos ajudar...</source>
+        <target>Describe how we can help...</target>
+      </trans-unit>
+      <trans-unit id="form.message.error" datatype="html">
+        <source>Mensagem obrigatória (mínimo 10 caracteres).</source>
+        <target>Message required (minimum 10 characters).</target>
+      </trans-unit>
+      <trans-unit id="form.submit.sending" datatype="html">
+        <source>A enviar…</source>
+        <target>Sending…</target>
+      </trans-unit>
+      <trans-unit id="form.submit.cta" datatype="html">
+        <source>Enviar Mensagem</source>
+        <target>Send Message</target>
+      </trans-unit>
+      <trans-unit id="form.error.generic" datatype="html">
+        <source>Ocorreu um erro. Por favor tente novamente.</source>
+        <target>An error occurred. Please try again.</target>
+      </trans-unit>
+      <trans-unit id="form.error.network" datatype="html">
+        <source>Não foi possível enviar a mensagem. Verifique a sua ligação e tente novamente.</source>
+        <target>Unable to send the message. Please check your connection and try again.</target>
+      </trans-unit>
+      <trans-unit id="contacts.label" datatype="html">
+        <source>Fale connosco</source>
+        <target>Get in touch</target>
+      </trans-unit>
+      <trans-unit id="contacts.heading" datatype="html">
+        <source>Contactos</source>
+        <target>Contacts</target>
+      </trans-unit>
+      <trans-unit id="contacts.subheading" datatype="html">
+        <source> Estamos aqui para ajudar. Entre em contacto pelos meios que preferir. </source>
+        <target> We are here to help. Get in touch through your preferred channel. </target>
+      </trans-unit>
+      <trans-unit id="contacts.phone" datatype="html">
+        <source>Telefone</source>
+        <target>Phone</target>
+      </trans-unit>
+      <trans-unit id="contacts.address" datatype="html">
+        <source>Morada</source>
+        <target>Address</target>
+      </trans-unit>
+      <trans-unit id="cta.label" datatype="html">
+        <source>Contacte-nos</source>
+        <target>Contact us</target>
+      </trans-unit>
+      <trans-unit id="cta.heading" datatype="html">
+        <source> Quer saber mais? Tem dúvidas? </source>
+        <target> Want to know more? Have questions? </target>
+      </trans-unit>
+      <trans-unit id="cta.subheading" datatype="html">
+        <source> Estamos disponíveis para o ajudar. Escolha a forma de contacto que preferir. </source>
+        <target> We are available to help. Choose your preferred contact method. </target>
+      </trans-unit>
+      <trans-unit id="cta.phone.title" datatype="html">
+        <source>Telefone</source>
+        <target>Phone</target>
+      </trans-unit>
+      <trans-unit id="cta.form.title" datatype="html">
+        <source>Formulário</source>
+        <target>Form</target>
+      </trans-unit>
+      <trans-unit id="cta.form.desc" datatype="html">
+        <source>Envie-nos uma mensagem</source>
+        <target>Send us a message</target>
+      </trans-unit>
+      <trans-unit id="fab.group.ariaLabel" datatype="html">
+        <source>Ações de contacto</source>
+        <target>Contact actions</target>
+      </trans-unit>
+      <trans-unit id="fab.phone.label" datatype="html">
+        <source> Telefone </source>
+        <target> Phone </target>
+      </trans-unit>
+      <trans-unit id="fab.phone.ariaLabel" datatype="html">
+        <source>Ligar por telefone</source>
+        <target>Call by phone</target>
+      </trans-unit>
+      <trans-unit id="fab.email.ariaLabel" datatype="html">
+        <source>Enviar email</source>
+        <target>Send email</target>
+      </trans-unit>
+      <trans-unit id="fab.whatsapp.ariaLabel" datatype="html">
+        <source>Contactar pelo WhatsApp</source>
+        <target>Contact via WhatsApp</target>
+      </trans-unit>
+      <trans-unit id="fab.form.label" datatype="html">
+        <source> Formulário </source>
+        <target> Form </target>
+      </trans-unit>
+      <trans-unit id="fab.form.ariaLabel" datatype="html">
+        <source>Ir para o formulário de contacto</source>
+        <target>Go to the contact form</target>
+      </trans-unit>
+      <trans-unit id="fab.toggle.ariaLabel" datatype="html">
+        <source>Opções de contacto</source>
+        <target>Contact options</target>
+      </trans-unit>
+      <trans-unit id="footer.tagline" datatype="html">
+        <source>Consultoria em Guimarães</source>
+        <target>Consulting in Guimarães</target>
+      </trans-unit>
+      <trans-unit id="footer.phone" datatype="html">
+        <source>Telefone</source>
+        <target>Phone</target>
+      </trans-unit>
+      <trans-unit id="footer.copyright" datatype="html">
+        <source> © <x id="INTERPOLATION" equiv-text="{{ year }}"/> Estratégia &amp; Resultado.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br class=&quot;sm:hidden&quot;&gt;"/> Todos os direitos reservados. </source>
+        <target> © <x id="INTERPOLATION" equiv-text="{{ year }}"/> Estratégia &amp; Resultado.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br class=&quot;sm:hidden&quot;&gt;"/> All rights reserved. </target>
+      </trans-unit>
+      <trans-unit id="hero.location" datatype="html">
+        <source>Guimarães, Portugal</source>
+        <target>Guimarães, Portugal</target>
+      </trans-unit>
+      <trans-unit id="hero.tagline" datatype="html">
+        <source> Consultoria abrangente para empresas e particulares em Guimarães. </source>
+        <target> Comprehensive consulting for businesses and individuals in Guimarães. </target>
+      </trans-unit>
+      <trans-unit id="hero.subtitle" datatype="html">
+        <source> Fiscalidade, Contabilidade, Jurídico, Seguros, Crédito e muito mais — tudo o que precisa, num só lugar. </source>
+        <target> Taxation, Accounting, Legal, Insurance, Credit and more — everything you need, in one place. </target>
+      </trans-unit>
+      <trans-unit id="hero.cta.contact" datatype="html">
+        <source>Pedir Contacto</source>
+        <target>Request Callback</target>
+      </trans-unit>
+      <trans-unit id="hero.cta.services" datatype="html">
+        <source>Conhecer os Serviços</source>
+        <target>Explore Our Services</target>
+      </trans-unit>
+      <trans-unit id="hero.stats.services" datatype="html">
+        <source>Serviços</source>
+        <target>Services</target>
+      </trans-unit>
+      <trans-unit id="hero.stats.dedication" datatype="html">
+        <source>Dedicação</source>
+        <target>Dedication</target>
+      </trans-unit>
+      <trans-unit id="hero.stats.location" datatype="html">
+        <source>Guimarães</source>
+        <target>Guimarães</target>
+      </trans-unit>
+      <trans-unit id="hero.scroll.ariaLabel" datatype="html">
+        <source>Rolar para baixo</source>
+        <target>Scroll down</target>
+      </trans-unit>
+      <trans-unit id="langSwitcher.pt.ariaLabel" datatype="html">
+        <source>Português</source>
+        <target>Português</target>
+      </trans-unit>
+      <trans-unit id="langSwitcher.en.ariaLabel" datatype="html">
+        <source>English</source>
+        <target>English</target>
+      </trans-unit>
+      <trans-unit id="location.label" datatype="html">
+        <source>Onde estamos</source>
+        <target>Where we are</target>
+      </trans-unit>
+      <trans-unit id="location.heading" datatype="html">
+        <source>Localização</source>
+        <target>Location</target>
+      </trans-unit>
+      <trans-unit id="location.subheading" datatype="html">
+        <source> Encontre-nos no coração de Guimarães, cidade Berço de Portugal. </source>
+        <target> Find us in the heart of Guimarães, the birthplace of Portugal. </target>
+      </trans-unit>
+      <trans-unit id="location.findUs" datatype="html">
+        <source>Como nos encontrar</source>
+        <target>How to find us</target>
+      </trans-unit>
+      <trans-unit id="location.address.label" datatype="html">
+        <source>Morada</source>
+        <target>Address</target>
+      </trans-unit>
+      <trans-unit id="location.phone.label" datatype="html">
+        <source>Telefone</source>
+        <target>Phone</target>
+      </trans-unit>
+      <trans-unit id="location.hours.label" datatype="html">
+        <source>Horário</source>
+        <target>Hours</target>
+      </trans-unit>
+      <trans-unit id="location.hours.value" datatype="html">
+        <source>Segunda a Sexta: 9h00 – 18h00</source>
+        <target>Monday to Friday: 9:00 – 18:00</target>
+      </trans-unit>
+      <trans-unit id="location.map.title" datatype="html">
+        <source>Localização Estratégia &amp; Resultado em Guimarães</source>
+        <target>Estratégia &amp; Resultado Location in Guimarães</target>
+      </trans-unit>
+      <trans-unit id="nav.logo.ariaLabel" datatype="html">
+        <source>Ir para o início</source>
+        <target>Go to homepage</target>
+      </trans-unit>
+      <trans-unit id="nav.services" datatype="html">
+        <source>Serviços</source>
+        <target>Services</target>
+      </trans-unit>
+      <trans-unit id="nav.about" datatype="html">
+        <source>Sobre Nós</source>
+        <target>About Us</target>
+      </trans-unit>
+      <trans-unit id="nav.location" datatype="html">
+        <source>Localização</source>
+        <target>Location</target>
+      </trans-unit>
+      <trans-unit id="nav.contacts" datatype="html">
+        <source>Contactos</source>
+        <target>Contacts</target>
+      </trans-unit>
+      <trans-unit id="nav.form" datatype="html">
+        <source>Formulário</source>
+        <target>Form</target>
+      </trans-unit>
+      <trans-unit id="nav.cta" datatype="html">
+        <source> Pedir Contacto </source>
+        <target> Request Callback </target>
+      </trans-unit>
+      <trans-unit id="nav.menu.ariaLabel" datatype="html">
+        <source>Abrir menu</source>
+        <target>Open menu</target>
+      </trans-unit>
+      <trans-unit id="modal.title" datatype="html">
+        <source>Pedir Contacto</source>
+        <target>Request Callback</target>
+      </trans-unit>
+      <trans-unit id="modal.subtitle" datatype="html">
+        <source>Ligamos-lhe em breve.</source>
+        <target>We will call you shortly.</target>
+      </trans-unit>
+      <trans-unit id="modal.close.ariaLabel" datatype="html">
+        <source>Fechar modal</source>
+        <target>Close modal</target>
+      </trans-unit>
+      <trans-unit id="modal.success.title" datatype="html">
+        <source>Pedido recebido!</source>
+        <target>Request received!</target>
+      </trans-unit>
+      <trans-unit id="modal.success.desc" datatype="html">
+        <source>Entraremos em contacto consigo em breve.</source>
+        <target>We will get in touch with you shortly.</target>
+      </trans-unit>
+      <trans-unit id="modal.success.close" datatype="html">
+        <source>Fechar</source>
+        <target>Close</target>
+      </trans-unit>
+      <trans-unit id="modal.name.label" datatype="html">
+        <source>Nome</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit id="modal.name.placeholder" datatype="html">
+        <source>O seu nome</source>
+        <target>Your name</target>
+      </trans-unit>
+      <trans-unit id="modal.name.error" datatype="html">
+        <source>Nome obrigatório.</source>
+        <target>Name required.</target>
+      </trans-unit>
+      <trans-unit id="modal.phone.label" datatype="html">
+        <source>Telefone</source>
+        <target>Phone</target>
+      </trans-unit>
+      <trans-unit id="modal.phone.error" datatype="html">
+        <source>Telefone obrigatório.</source>
+        <target>Phone number required.</target>
+      </trans-unit>
+      <trans-unit id="modal.time.label" datatype="html">
+        <source>Melhor horário</source>
+        <target>Best time to call</target>
+      </trans-unit>
+      <trans-unit id="modal.service.label" datatype="html">
+        <source>Serviço</source>
+        <target>Service</target>
+      </trans-unit>
+      <trans-unit id="modal.service.placeholder" datatype="html">
+        <source>Seleccionar serviço *</source>
+        <target>Select a service *</target>
+      </trans-unit>
+      <trans-unit id="modal.submit.sending" datatype="html">
+        <source>A enviar…</source>
+        <target>Sending…</target>
+      </trans-unit>
+      <trans-unit id="modal.submit.cta" datatype="html">
+        <source>Pedir Contacto</source>
+        <target>Request Callback</target>
+      </trans-unit>
+      <trans-unit id="modal.time.any" datatype="html">
+        <source>Qualquer horário</source>
+        <target>Any time</target>
+      </trans-unit>
+      <trans-unit id="modal.time.morning" datatype="html">
+        <source>Manhã (9h – 12h)</source>
+        <target>Morning (9am – 12pm)</target>
+      </trans-unit>
+      <trans-unit id="modal.time.lunch" datatype="html">
+        <source>Almoço (12h – 14h)</source>
+        <target>Lunch (12pm – 2pm)</target>
+      </trans-unit>
+      <trans-unit id="modal.time.afternoon" datatype="html">
+        <source>Tarde (14h – 17h)</source>
+        <target>Afternoon (2pm – 5pm)</target>
+      </trans-unit>
+      <trans-unit id="modal.time.evening" datatype="html">
+        <source>Final do dia (17h – 18h)</source>
+        <target>End of day (5pm – 6pm)</target>
+      </trans-unit>
+      <trans-unit id="modal.error.generic" datatype="html">
+        <source>Ocorreu um erro. Por favor tente novamente.</source>
+        <target>An error occurred. Please try again.</target>
+      </trans-unit>
+      <trans-unit id="modal.error.network" datatype="html">
+        <source>Não foi possível enviar o pedido. Verifique a sua ligação e tente novamente.</source>
+        <target>Unable to send the request. Please check your connection and try again.</target>
+      </trans-unit>
+      <trans-unit id="services.label" datatype="html">
+        <source>O que fazemos</source>
+        <target>What we do</target>
+      </trans-unit>
+      <trans-unit id="services.heading" datatype="html">
+        <source>Os Nossos Serviços</source>
+        <target>Our Services</target>
+      </trans-unit>
+      <trans-unit id="services.subheading" datatype="html">
+        <source> Soluções completas e personalizadas para particulares e empresas em Guimarães e região. </source>
+        <target> Complete and personalised solutions for individuals and businesses in Guimarães and the region. </target>
+      </trans-unit>
+      <trans-unit id="services.card.cta" datatype="html">
+        <source> Contactar sobre este serviço </source>
+        <target> Contact about this service </target>
+      </trans-unit>
+      <trans-unit id="service.fiscalidade.name" datatype="html">
+        <source>Fiscalidade e Contabilidade</source>
+        <target>Taxation and Accounting</target>
+      </trans-unit>
+      <trans-unit id="service.fiscalidade.desc" datatype="html">
+        <source>Gestão fiscal e contabilística completa para empresas e particulares. Declarações fiscais, IVA, IRC/IRS empresarial e aconselhamento tributário.</source>
+        <target>Complete tax and accounting management for businesses and individuals. Tax returns, VAT, corporate tax and tax advisory.</target>
+      </trans-unit>
+      <trans-unit id="service.juridica.name" datatype="html">
+        <source>Consultoria Jurídica</source>
+        <target>Legal Consulting</target>
+      </trans-unit>
+      <trans-unit id="service.juridica.desc" datatype="html">
+        <source>Assessoria jurídica especializada para empresas e particulares. Contratos, direito comercial, laboral e apoio em litígios.</source>
+        <target>Specialised legal advice for businesses and individuals. Contracts, commercial and labour law, and litigation support.</target>
+      </trans-unit>
+      <trans-unit id="service.empresas.name" datatype="html">
+        <source>Consultoria de Empresas</source>
+        <target>Business Consulting</target>
+      </trans-unit>
+      <trans-unit id="service.empresas.desc" datatype="html">
+        <source>Estratégia, planeamento e gestão empresarial. Reestruturação organizacional, planos de negócio e melhoria de processos.</source>
+        <target>Strategy, planning, and business management. Organisational restructuring, business plans, and process improvement.</target>
+      </trans-unit>
+      <trans-unit id="service.rendas.name" datatype="html">
+        <source>Gestão de Rendas</source>
+        <target>Rental Management</target>
+      </trans-unit>
+      <trans-unit id="service.rendas.desc" datatype="html">
+        <source>Administração e gestão de imóveis arrendados. Contratos de arrendamento, actualização de rendas e acompanhamento legal.</source>
+        <target>Administration and management of rented properties. Lease agreements, rent updates, and legal support.</target>
+      </trans-unit>
+      <trans-unit id="service.credito.name" datatype="html">
+        <source>Crédito</source>
+        <target>Credit</target>
+      </trans-unit>
+      <trans-unit id="service.credito.desc" datatype="html">
+        <source>Intermediação e aconselhamento em crédito habitação, crédito pessoal e financiamento empresarial. Encontramos as melhores condições.</source>
+        <target>Credit brokerage and advisory for home loans, personal credit, and business financing. We find the best conditions.</target>
+      </trans-unit>
+      <trans-unit id="service.seguros.name" datatype="html">
+        <source>Seguros</source>
+        <target>Insurance</target>
+      </trans-unit>
+      <trans-unit id="service.seguros.desc" datatype="html">
+        <source>Consultoria e mediação de seguros para particulares e empresas. Vida, saúde, automóvel, habitação e seguros empresariais.</source>
+        <target>Insurance consulting and brokerage for individuals and businesses. Life, health, motor, home, and business insurance.</target>
+      </trans-unit>
+      <trans-unit id="service.negocios.name" datatype="html">
+        <source>Apoio a Negócios</source>
+        <target>Business Support</target>
+      </trans-unit>
+      <trans-unit id="service.negocios.desc" datatype="html">
+        <source>Suporte completo ao empreendedor. Constituição de empresas, licenciamentos, candidaturas a fundos europeus e apoio à expansão.</source>
+        <target>Full support for entrepreneurs. Company formation, licensing, European funding applications, and expansion support.</target>
+      </trans-unit>
+      <trans-unit id="service.irs.name" datatype="html">
+        <source>IRS</source>
+        <target>IRS (Income Tax)</target>
+      </trans-unit>
+      <trans-unit id="service.irs.desc" datatype="html">
+        <source>Entrega de declarações de IRS para trabalhadores por conta de outrem e independentes. Optimização fiscal e reembolso máximo.</source>
+        <target>IRS tax return filing for employees and self-employed individuals. Tax optimisation and maximum refund.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

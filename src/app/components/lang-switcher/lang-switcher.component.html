@@ -1,0 +1,25 @@
+<div class="flex items-center gap-0.5 text-xs font-semibold">
+  <a
+    [href]="ptUrl"
+    class="px-2 py-1 rounded transition-colors duration-200"
+    [class.text-er-gold]="currentLang === 'pt'"
+    [class.text-white]="currentLang === 'pt'"
+    [class.text-white]="currentLang !== 'pt'"
+    [class.opacity-50]="currentLang !== 'pt'"
+    [class.hover:opacity-100]="currentLang !== 'pt'"
+    aria-label="Português"
+    i18n-aria-label="@@langSwitcher.pt.ariaLabel"
+  >PT</a>
+  <span class="text-white/30">|</span>
+  <a
+    [href]="enUrl"
+    class="px-2 py-1 rounded transition-colors duration-200"
+    [class.text-er-gold]="currentLang === 'en'"
+    [class.text-white]="currentLang === 'en'"
+    [class.text-white]="currentLang !== 'en'"
+    [class.opacity-50]="currentLang !== 'en'"
+    [class.hover:opacity-100]="currentLang !== 'en'"
+    aria-label="English"
+    i18n-aria-label="@@langSwitcher.en.ariaLabel"
+  >EN</a>
+</div>
