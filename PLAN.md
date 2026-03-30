@@ -261,7 +261,59 @@ jobs:
 - [ ] Optimização de performance (lazy loading, compressão)
 - [ ] Cloudflare security headers
 
-### Fase 5 — Launch
+### Fase 5 — Testes E2E
+
+> Padrão de referência: setup Playwright do projecto `feelathomehouse-v2`
+
+#### Setup e Configuração
+- [ ] Instalar Playwright (`pnpm dlx playwright install --with-deps`)
+- [ ] Configurar `playwright.config.ts` (baseURL, browsers: chromium/firefox/webkit, reporters)
+- [ ] Script `pnpm test:e2e` no `package.json`
+- [ ] Configurar servidor de desenvolvimento para testes (`webServer` no config)
+
+#### Testes de Navegação e Scroll
+- [ ] Verifica que todas as secções existem no DOM (hero, serviços, sobre, localização, contactos, formulário)
+- [ ] Navegar via links do navbar/menu ancoras e verificar scroll para a secção correcta
+- [ ] Verificar que o botão CTA do hero faz scroll para o formulário ou abre o modal
+
+#### Testes de Cards de Serviços
+- [ ] Verifica que os 8 cards de serviços são renderizados
+- [ ] Click em "Contactar sobre este serviço" pré-preenche o dropdown do formulário com o serviço correcto
+- [ ] Click no card abre o modal de pedido rápido com o serviço correcto pré-seleccionado
+
+#### Testes do Formulário de Contacto
+- [ ] Submissão com campos vazios mostra erros de validação em todos os campos obrigatórios
+- [ ] Email inválido mostra erro de validação
+- [ ] Pré-preenchimento via query param (`?service=irs`) funciona correctamente
+- [ ] Submissão com dados válidos (mock da API) mostra mensagem de sucesso
+- [ ] Submissão com erro da API mostra mensagem de erro
+
+#### Testes do Modal de Pedido Rápido
+- [ ] Botão "Pedir Contacto" abre o modal
+- [ ] Click fora do modal ou no botão "Fechar" fecha o modal
+- [ ] Tecla Escape fecha o modal
+- [ ] Submissão com campos vazios mostra erros de validação
+- [ ] Submissão com dados válidos (mock da API) mostra sucesso e fecha o modal
+
+#### Testes de Design Responsivo
+- [ ] Mobile (375×667): navbar, hero, cards em coluna, formulário full-width
+- [ ] Tablet (768×1024): layout de 2 colunas nos cards
+- [ ] Desktop (1280×800): layout completo, navbar horizontal
+
+#### Verificação de SEO e Meta Tags
+- [ ] `<title>` contém o nome da empresa
+- [ ] `<meta name="description">` presente e não vazio
+- [ ] Open Graph tags (`og:title`, `og:description`, `og:url`) presentes
+- [ ] `<link rel="canonical">` presente
+
+#### Verificação de Acessibilidade
+- [ ] Imagens têm atributo `alt`
+- [ ] Inputs do formulário têm `label` associado
+- [ ] Botões têm texto acessível (ou `aria-label`)
+- [ ] Contraste de cores adequado nos elementos principais (verificação manual / axe)
+- [ ] Navegação por teclado (Tab) funciona nos formulários e modal
+
+### Fase 6 — Launch
 - [ ] Deploy para production
 - [ ] Configuração DNS em Cloudflare
 - [ ] Verificação SSL
