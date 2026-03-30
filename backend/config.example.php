@@ -24,6 +24,15 @@ return [
     // Use 'dev' to skip verification locally.
     'turnstile_secret_key' => '__TURNSTILE_SECRET_KEY__',
 
+    // --- WhatsApp quick-reply ---
+    // International format without leading +. Example: 351912345678
+    'whatsapp_number' => '__WHATSAPP_NUMBER__',
+
+    // --- Rate limiting ---
+    // Maximum submissions per window per IP (applies to each endpoint independently).
+    'rate_limit_requests' => 5,
+    'rate_limit_window'   => 900, // 15 minutes in seconds
+
     // --- CORS ---
     'allowed_origins' => [
         'http://localhost:4200',
