@@ -1,10 +1,31 @@
-<main id="main-content" class="min-h-screen bg-er-cream">
-  <!-- Phase 2: sections will be added here -->
-  <div class="flex items-center justify-center min-h-screen">
-    <div class="text-center">
-      <h1 class="section-heading text-4xl mb-4">Estratégia &amp; Resultado</h1>
-      <div class="gold-divider mx-auto mb-4"></div>
-      <p class="section-subheading">Consultoria em Guimarães</p>
-    </div>
-  </div>
+<app-nav
+  (openModal)="openModal()"
+></app-nav>
+
+<main id="main-content">
+  <app-hero
+    (openModal)="openModal()"
+  ></app-hero>
+
+  <app-services-section
+    (contactService)="onContactService($event)"
+  ></app-services-section>
+
+  <app-about></app-about>
+
+  <app-location></app-location>
+
+  <app-contacts></app-contacts>
+
+  <app-contact-form
+    [preSelectedService]="formService()"
+  ></app-contact-form>
 </main>
+
+<app-footer></app-footer>
+
+<app-quick-contact-modal
+  [isOpen]="modalOpen()"
+  [preSelectedService]="modalService()"
+  (close)="closeModal()"
+></app-quick-contact-modal>

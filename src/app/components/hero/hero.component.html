@@ -1,0 +1,92 @@
+<section
+  id="inicio"
+  class="relative min-h-screen flex items-center justify-center overflow-hidden"
+  style="background: linear-gradient(135deg, #1A2744 0%, #243660 40%, #2E5BA8 100%);"
+>
+  <!-- Decorative background elements -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="absolute -top-40 -right-40 w-96 h-96 rounded-full opacity-10"
+         style="background: radial-gradient(circle, #C8972E, transparent);"></div>
+    <div class="absolute -bottom-40 -left-40 w-96 h-96 rounded-full opacity-10"
+         style="background: radial-gradient(circle, #C8972E, transparent);"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-5"
+         style="background: radial-gradient(circle, #C8972E, transparent);"></div>
+    <!-- Grid overlay -->
+    <div class="absolute inset-0 opacity-[0.03]"
+         style="background-image: linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px); background-size: 50px 50px;"></div>
+  </div>
+
+  <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-24 pt-32">
+
+    <!-- Gold accent line -->
+    <div class="flex items-center justify-center gap-3 mb-8">
+      <div class="h-px w-12 bg-er-gold opacity-60"></div>
+      <span class="text-er-gold text-xs font-semibold tracking-[0.25em] uppercase">Guimarães, Portugal</span>
+      <div class="h-px w-12 bg-er-gold opacity-60"></div>
+    </div>
+
+    <!-- Main heading -->
+    <h1 class="font-display font-bold text-white mb-6 leading-tight">
+      <span class="block">Estratégia</span>
+      <span class="block text-er-gold">&amp; Resultado</span>
+    </h1>
+
+    <!-- Tagline -->
+    <p class="text-white/80 text-xl md:text-2xl font-light mb-4 max-w-3xl mx-auto leading-relaxed">
+      Consultoria abrangente para empresas e particulares em Guimarães.
+    </p>
+    <p class="text-white/60 text-base md:text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
+      Fiscalidade, Contabilidade, Jurídico, Seguros, Crédito e muito mais —
+      tudo o que precisa, num só lugar.
+    </p>
+
+    <!-- CTAs -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <button
+        (click)="openModal.emit()"
+        class="btn-primary text-base px-8 py-4 shadow-xl hover:shadow-2xl"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+        </svg>
+        Pedir Contacto
+      </button>
+      <button
+        (click)="scrollToServices()"
+        class="btn-outline-gold text-base px-8 py-4"
+      >
+        Conhecer os Serviços
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Stats -->
+    <div class="mt-16 grid grid-cols-3 gap-6 max-w-2xl mx-auto">
+      <div class="text-center">
+        <div class="text-er-gold font-bold text-2xl md:text-3xl font-display">8+</div>
+        <div class="text-white/60 text-xs md:text-sm mt-1">Serviços</div>
+      </div>
+      <div class="text-center border-x border-white/10">
+        <div class="text-er-gold font-bold text-2xl md:text-3xl font-display">100%</div>
+        <div class="text-white/60 text-xs md:text-sm mt-1">Dedicação</div>
+      </div>
+      <div class="text-center">
+        <div class="text-er-gold font-bold text-2xl md:text-3xl font-display">Local</div>
+        <div class="text-white/60 text-xs md:text-sm mt-1">Guimarães</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <button
+    (click)="scrollToServices()"
+    class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/40 hover:text-er-gold transition-colors animate-bounce focus:outline-none"
+    aria-label="Rolar para baixo"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+</section>

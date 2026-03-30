@@ -1,0 +1,164 @@
+<section id="formulario" class="py-20 lg:py-28 bg-white">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Section header -->
+    <div class="text-center mb-12">
+      <p class="text-er-gold font-semibold text-sm tracking-widest uppercase mb-3">Envie-nos uma mensagem</p>
+      <h2 class="section-heading mb-4">Formulário de Contacto</h2>
+      <div class="gold-divider mx-auto mb-5"></div>
+      <p class="section-subheading max-w-lg mx-auto">
+        Preencha o formulário e entraremos em contacto consigo o mais brevemente possível.
+      </p>
+    </div>
+
+    @if (submitted()) {
+      <!-- Success state -->
+      <div class="bg-green-50 border border-green-200 rounded-2xl p-10 text-center">
+        <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <h3 class="font-display font-bold text-er-navy text-xl mb-2">Mensagem enviada!</h3>
+        <p class="text-er-navy/70 text-sm">Obrigado pelo seu contacto. Responderemos em breve.</p>
+        <button (click)="submitted.set(false)" class="mt-6 btn-primary text-sm px-6 py-2.5">
+          Enviar outra mensagem
+        </button>
+      </div>
+    } @else {
+      <!-- Form -->
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" class="card p-6 sm:p-8 space-y-5" novalidate>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <!-- Name -->
+          <div>
+            <label for="cf-name" class="block text-sm font-semibold text-er-navy mb-1.5">
+              Nome <span class="text-red-500">*</span>
+            </label>
+            <input
+              id="cf-name"
+              type="text"
+              formControlName="name"
+              autocomplete="name"
+              placeholder="O seu nome"
+              class="w-full rounded-lg border px-4 py-3 text-sm text-er-navy placeholder:text-er-navy/30 focus:outline-none focus:ring-2 focus:ring-er-blue/40 transition-colors"
+              [class.border-red-400]="isInvalid('name')"
+              [class.border-er-navy/20]="!isInvalid('name')"
+            >
+            @if (isInvalid('name')) {
+              <p class="mt-1 text-xs text-red-500">Nome obrigatório (mínimo 2 caracteres).</p>
+            }
+          </div>
+
+          <!-- Email -->
+          <div>
+            <label for="cf-email" class="block text-sm font-semibold text-er-navy mb-1.5">
+              Email <span class="text-red-500">*</span>
+            </label>
+            <input
+              id="cf-email"
+              type="email"
+              formControlName="email"
+              autocomplete="email"
+              placeholder="O seu email"
+              class="w-full rounded-lg border px-4 py-3 text-sm text-er-navy placeholder:text-er-navy/30 focus:outline-none focus:ring-2 focus:ring-er-blue/40 transition-colors"
+              [class.border-red-400]="isInvalid('email')"
+              [class.border-er-navy/20]="!isInvalid('email')"
+            >
+            @if (isInvalid('email')) {
+              <p class="mt-1 text-xs text-red-500">Email inválido ou obrigatório.</p>
+            }
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <!-- Phone -->
+          <div>
+            <label for="cf-phone" class="block text-sm font-semibold text-er-navy mb-1.5">
+              Telefone <span class="text-red-500">*</span>
+            </label>
+            <input
+              id="cf-phone"
+              type="tel"
+              formControlName="phone"
+              autocomplete="tel"
+              placeholder="+351 9XX XXX XXX"
+              class="w-full rounded-lg border px-4 py-3 text-sm text-er-navy placeholder:text-er-navy/30 focus:outline-none focus:ring-2 focus:ring-er-blue/40 transition-colors"
+              [class.border-red-400]="isInvalid('phone')"
+              [class.border-er-navy/20]="!isInvalid('phone')"
+            >
+            @if (isInvalid('phone')) {
+              <p class="mt-1 text-xs text-red-500">Telefone obrigatório.</p>
+            }
+          </div>
+
+          <!-- Service -->
+          <div>
+            <label for="cf-service" class="block text-sm font-semibold text-er-navy mb-1.5">Serviço</label>
+            <select
+              id="cf-service"
+              formControlName="service"
+              class="w-full rounded-lg border border-er-navy/20 px-4 py-3 text-sm text-er-navy bg-white focus:outline-none focus:ring-2 focus:ring-er-blue/40 transition-colors"
+            >
+              <option value="">Seleccionar serviço (opcional)</option>
+              @for (svc of services; track svc.id) {
+                <option [value]="svc.id">{{ svc.name }}</option>
+              }
+            </select>
+          </div>
+        </div>
+
+        <!-- Message -->
+        <div>
+          <label for="cf-message" class="block text-sm font-semibold text-er-navy mb-1.5">
+            Mensagem <span class="text-red-500">*</span>
+          </label>
+          <textarea
+            id="cf-message"
+            formControlName="message"
+            rows="4"
+            placeholder="Descreva como podemos ajudar..."
+            class="w-full rounded-lg border px-4 py-3 text-sm text-er-navy placeholder:text-er-navy/30 focus:outline-none focus:ring-2 focus:ring-er-blue/40 transition-colors resize-none"
+            [class.border-red-400]="isInvalid('message')"
+            [class.border-er-navy/20]="!isInvalid('message')"
+          ></textarea>
+          @if (isInvalid('message')) {
+            <p class="mt-1 text-xs text-red-500">Mensagem obrigatória (mínimo 10 caracteres).</p>
+          }
+        </div>
+
+        <!-- Turnstile placeholder -->
+        <div
+          class="cf-turnstile"
+          data-sitekey="YOUR_TURNSTILE_SITE_KEY"
+          data-theme="light"
+        ></div>
+
+        <!-- Error message -->
+        @if (error()) {
+          <div class="bg-red-50 border border-red-200 text-red-700 rounded-lg px-4 py-3 text-sm">
+            {{ error() }}
+          </div>
+        }
+
+        <!-- Submit -->
+        <button
+          type="submit"
+          [disabled]="submitting()"
+          class="btn-primary w-full py-3.5 text-base disabled:opacity-60 disabled:cursor-not-allowed"
+        >
+          @if (submitting()) {
+            <svg class="animate-spin h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+            </svg>
+            A enviar…
+          } @else {
+            Enviar Mensagem
+          }
+        </button>
+
+      </form>
+    }
+  </div>
+</section>
