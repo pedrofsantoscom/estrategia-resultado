@@ -71,8 +71,8 @@ export class ServicesSectionComponent {
 
   services = SERVICES;
 
-  onContactService(serviceId: string): void {
-    this.contactService.emit(serviceId);
+  onContactService(serviceName: string): void {
+    this.contactService.emit(serviceName);
     const el = document.getElementById('formulario');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });

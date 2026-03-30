@@ -29,3 +29,16 @@
   [preSelectedService]="modalService()"
   (close)="closeModal()"
 ></app-quick-contact-modal>
+
+<!-- Scroll to top -->
+@if (showScrollTop()) {
+  <button
+    (click)="scrollToTop()"
+    class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-er-navy text-white shadow-lg flex items-center justify-center hover:bg-er-blue transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-er-gold focus:ring-offset-2"
+    aria-label="Voltar ao topo"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+    </svg>
+  </button>
+}

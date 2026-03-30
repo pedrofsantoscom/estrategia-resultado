@@ -5,12 +5,17 @@ import {
   Input,
   OnChanges,
   Output,
+  PLATFORM_ID,
   SimpleChanges,
+  inject,
   signal,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { isPlatformBrowser, CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { lastValueFrom } from 'rxjs';
 import { SERVICES } from '../services-section/services-section.component';
+import { ApiService } from '../../services/api.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-quick-contact-modal',
@@ -24,7 +29,11 @@ export class QuickContactModalComponent implements OnChanges {
   @Input() preSelectedService = '';
   @Output() close = new EventEmitter<void>();
 
+  private platformId = inject(PLATFORM_ID);
+  private api = inject(ApiService);
+
   services = SERVICES;
+  turnstileSiteKey = environment.turnstileSiteKey;
   preferredTimes = [
     'Manhã (9h – 12h)',
     'Almoço (12h – 14h)',
@@ -41,8 +50,8 @@ export class QuickContactModalComponent implements OnChanges {
     this.form = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
       phone: ['', Validators.required],
-      preferred_time: [''],
-      service: [''],
+      preferred_time: ['Qualquer horário'],
+      service: ['', Validators.required],
     });
   }
 
@@ -67,6 +76,13 @@ export class QuickContactModalComponent implements OnChanges {
     }
   }
 
+  private getTurnstileToken(): string {
+    if (isPlatformBrowser(this.platformId)) {
+      return (window as any).turnstile?.getResponse() ?? '';
+    }
+    return '';
+  }
+
   async onSubmit(): Promise<void> {
     if (this.form.invalid) {
       this.form.markAllAsTouched();
@@ -77,12 +93,12 @@ export class QuickContactModalComponent implements OnChanges {
     this.error.set('');
 
     try {
-      const response = await fetch('/api/contact-request.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(this.form.value),
-      });
-      const data = await response.json();
+      const data = await lastValueFrom(
+        this.api.submitContactRequest({
+          ...this.form.value,
+          turnstile_token: this.getTurnstileToken(),
+        })
+      );
 
       if (data.success) {
         this.submitted.set(true);

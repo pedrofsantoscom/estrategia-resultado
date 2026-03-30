@@ -1,4 +1,12 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  HostListener,
+  PLATFORM_ID,
+  inject,
+  signal,
+} from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { NavComponent } from './components/nav/nav.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { ServicesSectionComponent } from './components/services-section/services-section.component';
@@ -28,22 +36,42 @@ import { FooterComponent } from './components/footer/footer.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
+  private platformId = inject(PLATFORM_ID);
+
   modalOpen = signal(false);
   modalService = signal('');
   formService = signal('');
+  showScrollTop = signal(false);
+
+  @HostListener('window:scroll')
+  onScroll(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.showScrollTop.set(window.scrollY > 400);
+    }
+  }
 
   openModal(serviceId = ''): void {
     this.modalService.set(serviceId);
     this.modalOpen.set(true);
-    document.body.style.overflow = 'hidden';
+    if (isPlatformBrowser(this.platformId)) {
+      document.body.style.overflow = 'hidden';
+    }
   }
 
   closeModal(): void {
     this.modalOpen.set(false);
-    document.body.style.overflow = '';
+    if (isPlatformBrowser(this.platformId)) {
+      document.body.style.overflow = '';
+    }
   }
 
-  onContactService(serviceId: string): void {
-    this.formService.set(serviceId);
+  onContactService(serviceName: string): void {
+    this.formService.set(serviceName);
+  }
+
+  scrollToTop(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   }
 }

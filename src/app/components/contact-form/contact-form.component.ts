@@ -3,12 +3,17 @@ import {
   Component,
   Input,
   OnChanges,
+  PLATFORM_ID,
   SimpleChanges,
+  inject,
   signal,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { isPlatformBrowser, CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { lastValueFrom } from 'rxjs';
 import { SERVICES } from '../services-section/services-section.component';
+import { ApiService } from '../../services/api.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-contact-form',
@@ -20,7 +25,11 @@ import { SERVICES } from '../services-section/services-section.component';
 export class ContactFormComponent implements OnChanges {
   @Input() preSelectedService = '';
 
+  private platformId = inject(PLATFORM_ID);
+  private api = inject(ApiService);
+
   services = SERVICES;
+  turnstileSiteKey = environment.turnstileSiteKey;
   form: FormGroup;
   submitting = signal(false);
   submitted = signal(false);
@@ -31,7 +40,7 @@ export class ContactFormComponent implements OnChanges {
       name: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.email]],
       phone: ['', Validators.required],
-      service: [''],
+      service: ['', Validators.required],
       message: ['', [Validators.required, Validators.minLength(10)]],
     });
   }
@@ -47,6 +56,13 @@ export class ContactFormComponent implements OnChanges {
     return !!(control && control.invalid && (control.dirty || control.touched));
   }
 
+  private getTurnstileToken(): string {
+    if (isPlatformBrowser(this.platformId)) {
+      return (window as any).turnstile?.getResponse() ?? '';
+    }
+    return '';
+  }
+
   async onSubmit(): Promise<void> {
     if (this.form.invalid) {
       this.form.markAllAsTouched();
@@ -57,12 +73,12 @@ export class ContactFormComponent implements OnChanges {
     this.error.set('');
 
     try {
-      const response = await fetch('/api/contact.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(this.form.value),
-      });
-      const data = await response.json();
+      const data = await lastValueFrom(
+        this.api.submitContactForm({
+          ...this.form.value,
+          turnstile_token: this.getTurnstileToken(),
+        })
+      );
 
       if (data.success) {
         this.submitted.set(true);
