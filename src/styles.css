@@ -1,0 +1,121 @@
+@import "tailwindcss";
+@source "../src";
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+
+  /* er-gold — primary brand colour */
+  --color-er-gold-50:  #fdf8ec;
+  --color-er-gold-100: #faefd1;
+  --color-er-gold-200: #f5dca0;
+  --color-er-gold-300: #efc36b;
+  --color-er-gold-400: #e8ac42;
+  --color-er-gold-500: #C8972E;
+  --color-er-gold-600: #a97a20;
+  --color-er-gold-700: #8a611a;
+  --color-er-gold-800: #6e4c17;
+  --color-er-gold-900: #583c14;
+  --color-er-gold:     #C8972E;
+
+  /* er-navy — secondary brand colour */
+  --color-er-navy-50:  #f0f2f8;
+  --color-er-navy-100: #dde3f0;
+  --color-er-navy-200: #bbc7e1;
+  --color-er-navy-300: #8ea3cc;
+  --color-er-navy-400: #5e7bb4;
+  --color-er-navy-500: #3a5a99;
+  --color-er-navy-600: #2d4880;
+  --color-er-navy-700: #243a68;
+  --color-er-navy-800: #1A2744;
+  --color-er-navy-900: #111b30;
+  --color-er-navy:     #1A2744;
+
+  /* er-blue — accent colour */
+  --color-er-blue-50:  #edf2fb;
+  --color-er-blue-100: #d8e4f6;
+  --color-er-blue-200: #b2c9ed;
+  --color-er-blue-300: #84a8e1;
+  --color-er-blue-400: #5284d0;
+  --color-er-blue-500: #2E5BA8;
+  --color-er-blue-600: #254d94;
+  --color-er-blue-700: #1e3f7a;
+  --color-er-blue-800: #183263;
+  --color-er-blue-900: #12264d;
+  --color-er-blue:     #2E5BA8;
+
+  /* er-cream — light background */
+  --color-er-cream-50:  #ffffff;
+  --color-er-cream-100: #F9F7F2;
+  --color-er-cream-200: #f0ede4;
+  --color-er-cream-300: #e4dfd3;
+  --color-er-cream-400: #d5cfc0;
+  --color-er-cream:     #F9F7F2;
+
+  /* Custom shadows using navy tint */
+  --shadow-er:    0 2px 15px -3px rgba(26, 39, 68, 0.08), 0 10px 20px -2px rgba(26, 39, 68, 0.05);
+  --shadow-er-lg: 0 10px 40px -10px rgba(26, 39, 68, 0.12), 0 2px 10px -2px rgba(26, 39, 68, 0.06);
+  --shadow-er-xl: 0 20px 60px -15px rgba(26, 39, 68, 0.18), 0 4px 20px -4px rgba(26, 39, 68, 0.07);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply font-sans text-er-navy bg-er-cream;
+  }
+
+  a, button, input, select, textarea, [role="button"] {
+    touch-action: manipulation;
+  }
+
+  h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+  h2 { font-size: clamp(1.5rem, 3.5vw, 2.25rem); }
+  h3 { font-size: clamp(1.125rem, 2.5vw, 1.5rem); }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-er-navy rounded-lg transition-all duration-200 bg-er-gold hover:bg-er-gold-600 focus:outline-none focus:ring-2 focus:ring-er-gold-400 focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 text-sm font-semibold rounded-lg border-2 border-er-navy text-er-navy transition-all duration-200 hover:bg-er-navy hover:text-white focus:outline-none focus:ring-2 focus:ring-er-navy-400 focus:ring-offset-2;
+  }
+
+  .btn-outline-gold {
+    @apply inline-flex items-center justify-center px-6 py-3 text-sm font-semibold rounded-lg border-2 border-er-gold text-er-gold transition-all duration-200 hover:bg-er-gold hover:text-er-navy focus:outline-none focus:ring-2 focus:ring-er-gold-400 focus:ring-offset-2;
+  }
+
+  .card {
+    @apply bg-white rounded-xl overflow-hidden;
+    box-shadow: var(--shadow-er);
+  }
+
+  .card-hover {
+    @apply bg-white rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-1;
+    box-shadow: var(--shadow-er);
+  }
+
+  .card-hover:hover {
+    box-shadow: var(--shadow-er-lg);
+  }
+
+  .section-heading {
+    @apply font-display font-bold text-er-navy tracking-tight;
+  }
+
+  .section-subheading {
+    @apply text-er-navy-400 mt-3 text-lg leading-relaxed;
+  }
+
+  .gold-divider {
+    @apply w-16 h-1 bg-er-gold rounded-full;
+  }
+}

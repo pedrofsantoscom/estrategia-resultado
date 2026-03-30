@@ -1,0 +1,72 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches: [production]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # --- Frontend build ---
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+          cache-dependency-path: pnpm-lock.yaml
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build frontend
+        run: pnpm run build
+
+      # --- Backend config ---
+      - name: Generate backend config.php from template
+        working-directory: backend
+        run: |
+          cp config.example.php config.php
+          sed -i "s|__SMTP_HOST__|${{ secrets.SMTP_HOST }}|g" config.php
+          sed -i "s|__SMTP_USER__|${{ secrets.SMTP_USER }}|g" config.php
+          sed -i "s|__SMTP_PASS__|${{ secrets.SMTP_PASS }}|g" config.php
+          sed -i "s|__SMTP_PORT__|${{ secrets.SMTP_PORT }}|g" config.php
+          sed -i "s|__MAIL_TO__|${{ secrets.MAIL_TO }}|g" config.php
+          sed -i "s|__TURNSTILE_SECRET_KEY__|${{ secrets.TURNSTILE_SECRET_KEY }}|g" config.php
+
+      # --- Deploy frontend via FTP ---
+      - name: Deploy frontend via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASS }}
+          local-dir: dist/estrategia-resultado/browser/
+          server-dir: ${{ secrets.FTP_SERVER_DIR }}
+
+      # --- Deploy backend via FTP ---
+      - name: Deploy backend via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASS }}
+          local-dir: backend/
+          server-dir: ${{ secrets.FTP_BACKEND_SERVER_DIR }}
+          exclude: |
+            **/.gitignore
+            config.example.php
+            tmp/**
+
+      # --- Cloudflare cache purge ---
+      - name: Purge Cloudflare cache
+        run: |
+          curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE_ID }}/purge_cache" \
+            -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            --data '{"purge_everything":true}'
