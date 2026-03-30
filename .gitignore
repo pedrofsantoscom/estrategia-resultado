@@ -47,3 +47,7 @@ backend/tmp/**/*.json
 
 # Misc
 *.pem
+
+# Playwright
+playwright-report/
+test-results/
