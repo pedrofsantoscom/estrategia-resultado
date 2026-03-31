@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@source "../src";
+@source ".";
 @plugin "@tailwindcss/forms";
 @plugin "@tailwindcss/typography";
 
