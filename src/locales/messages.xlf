@@ -513,6 +513,13 @@
           <context context-type="linenumber">29,30</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="location.address.building" datatype="html">
+        <source>Localizado em: Peça D'Ouro E Prata</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/location/location.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="location.phone.label" datatype="html">
         <source>Telefone</source>
         <context-group purpose="location">
@@ -539,6 +546,13 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/location/location.component.html</context>
           <context context-type="linenumber">75,76</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="location.map.viewLink" datatype="html">
+        <source>Ver no Google Maps</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/location/location.component.html</context>
+          <context context-type="linenumber">92</context>
         </context-group>
       </trans-unit>
       <trans-unit id="nav.logo.ariaLabel" datatype="html">

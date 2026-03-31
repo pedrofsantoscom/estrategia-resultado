@@ -294,6 +294,10 @@
         <source>Morada</source>
         <target>Address</target>
       </trans-unit>
+      <trans-unit id="location.address.building" datatype="html">
+        <source>Localizado em: Peça D'Ouro E Prata</source>
+        <target>Located in: Peça D'Ouro E Prata</target>
+      </trans-unit>
       <trans-unit id="location.phone.label" datatype="html">
         <source>Telefone</source>
         <target>Phone</target>
@@ -309,6 +313,10 @@
       <trans-unit id="location.map.title" datatype="html">
         <source>Localização Estratégia &amp; Resultado em Guimarães</source>
         <target>Estratégia &amp; Resultado Location in Guimarães</target>
+      </trans-unit>
+      <trans-unit id="location.map.viewLink" datatype="html">
+        <source>Ver no Google Maps</source>
+        <target>View on Google Maps</target>
       </trans-unit>
       <trans-unit id="nav.logo.ariaLabel" datatype="html">
         <source>Ir para o início</source>

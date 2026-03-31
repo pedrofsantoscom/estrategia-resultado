@@ -27,7 +27,8 @@
             </div>
             <div>
               <p class="font-semibold text-er-navy text-sm mb-0.5" i18n="@@location.address.label">Morada</p>
-              <p class="text-er-navy/70 text-sm leading-relaxed">Guimarães, Portugal</p>
+              <p class="text-er-navy/70 text-sm leading-relaxed">R. Rainha Dona Maria II 138<br>4810-431 Guimarães</p>
+              <p class="text-er-navy/50 text-xs mt-0.5" i18n="@@location.address.building">Localizado em: Peça D'Ouro E Prata</p>
             </div>
           </div>
 
@@ -70,18 +71,29 @@
       </div>
 
       <!-- Map embed -->
-      <div class="rounded-2xl overflow-hidden shadow-lg" style="height: 380px;">
-        <iframe
-          title="Localização Estratégia &amp; Resultado em Guimarães"
-          i18n-title="@@location.map.title"
-          width="100%"
-          height="100%"
-          style="border:0;"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47596.78!2d-8.2901!3d41.4425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2465d13d4d37eb%3A0x500ef6143a29917!2sGuimar%C3%A3es!5e0!3m2!1spt!2spt!4v1700000000000"
-          allowfullscreen>
-        </iframe>
+      <div>
+        <div class="rounded-2xl overflow-hidden shadow-lg" style="height: 380px;">
+          <iframe
+            title="Localização Estratégia &amp; Resultado em Guimarães"
+            i18n-title="@@location.map.title"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000!2d-8.2932998!3d41.4425267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd24ef0060a5411b%3A0x17f16dd759f4d79b!2sEstrat%C3%A9gia%20%26%20Resultado!5e0!3m2!1spt-PT!2spt!4v1"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="mt-3 text-center">
+          <a
+            href="https://maps.app.goo.gl/rCwgQKEPsDaHUdQv6"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-er-blue hover:text-er-gold text-sm font-medium transition-colors"
+            i18n="@@location.map.viewLink"
+          >Ver no Google Maps</a>
+        </div>
       </div>
 
     </div>

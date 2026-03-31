@@ -4,7 +4,7 @@
 
 - **Nome**: Estratégia & Resultado
 - **Tipo**: Agência de Consultoria
-- **Localização**: Guimarães, Portugal
+- **Localização**: R. Rainha Dona Maria II 138, 4810-431 Guimarães (Peça D'Ouro E Prata)
 - **Serviços**: Intermediação de Crédito, Serviços Jurídicos, Seguros, Apoio Administrativo, Consultadoria Empresarial, Fiscalidade e Contabilidade, Análise e Entrega do IRS, Gestão de Rendas, Intermediação de Actividades de Serviços de Apoio aos Negócios, Orçamentista
 - **Telefone**: +351 924 091 647 (WhatsApp: 351924091647)
 - **Tagline**: "Tratamos do que é burocrático, técnico ou complexo."
