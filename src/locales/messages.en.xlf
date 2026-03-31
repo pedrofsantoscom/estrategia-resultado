@@ -235,8 +235,8 @@
         <target>Guimarães, Portugal</target>
       </trans-unit>
       <trans-unit id="hero.tagline" datatype="html">
-        <source> Consultoria abrangente para empresas e particulares em Guimarães. </source>
-        <target> Comprehensive consulting for businesses and individuals in Guimarães. </target>
+        <source> Tratamos do que é burocrático, técnico ou complexo. </source>
+        <target> We handle what is bureaucratic, technical or complex. </target>
       </trans-unit>
       <trans-unit id="hero.subtitle" datatype="html">
         <source> Fiscalidade, Contabilidade, Jurídico, Seguros, Crédito e muito mais — tudo o que precisa, num só lugar. </source>
@@ -459,16 +459,16 @@
         <target>Complete tax and accounting management for businesses and individuals. Tax returns, VAT, corporate tax and tax advisory.</target>
       </trans-unit>
       <trans-unit id="service.juridica.name" datatype="html">
-        <source>Consultoria Jurídica</source>
-        <target>Legal Consulting</target>
+        <source>Serviços Jurídicos</source>
+        <target>Legal Services</target>
       </trans-unit>
       <trans-unit id="service.juridica.desc" datatype="html">
         <source>Assessoria jurídica especializada para empresas e particulares. Contratos, direito comercial, laboral e apoio em litígios.</source>
         <target>Specialised legal advice for businesses and individuals. Contracts, commercial and labour law, and litigation support.</target>
       </trans-unit>
       <trans-unit id="service.empresas.name" datatype="html">
-        <source>Consultoria de Empresas</source>
-        <target>Business Consulting</target>
+        <source>Consultadoria Empresarial</source>
+        <target>Business Consultancy</target>
       </trans-unit>
       <trans-unit id="service.empresas.desc" datatype="html">
         <source>Estratégia, planeamento e gestão empresarial. Reestruturação organizacional, planos de negócio e melhoria de processos.</source>
@@ -483,12 +483,12 @@
         <target>Administration and management of rented properties. Lease agreements, rent updates, and legal support.</target>
       </trans-unit>
       <trans-unit id="service.credito.name" datatype="html">
-        <source>Crédito</source>
-        <target>Credit</target>
+        <source>Intermediação de Crédito</source>
+        <target>Credit Intermediation</target>
       </trans-unit>
       <trans-unit id="service.credito.desc" datatype="html">
-        <source>Intermediação e aconselhamento em crédito habitação, crédito pessoal e financiamento empresarial. Encontramos as melhores condições.</source>
-        <target>Credit brokerage and advisory for home loans, personal credit, and business financing. We find the best conditions.</target>
+        <source>Intermediação e aconselhamento em crédito habitação, crédito pessoal e financiamento empresarial. Encontramos as melhores condições para o seu perfil.</source>
+        <target>Credit brokerage and advisory for home loans, personal credit, and business financing. We find the best conditions for your profile.</target>
       </trans-unit>
       <trans-unit id="service.seguros.name" datatype="html">
         <source>Seguros</source>
@@ -499,20 +499,36 @@
         <target>Insurance consulting and brokerage for individuals and businesses. Life, health, motor, home, and business insurance.</target>
       </trans-unit>
       <trans-unit id="service.negocios.name" datatype="html">
-        <source>Apoio a Negócios</source>
-        <target>Business Support</target>
+        <source>Apoio Administrativo</source>
+        <target>Administrative Support</target>
       </trans-unit>
       <trans-unit id="service.negocios.desc" datatype="html">
-        <source>Suporte completo ao empreendedor. Constituição de empresas, licenciamentos, candidaturas a fundos europeus e apoio à expansão.</source>
-        <target>Full support for entrepreneurs. Company formation, licensing, European funding applications, and expansion support.</target>
+        <source>Suporte administrativo completo a empresas e particulares. Gestão documental, secretariado e apoio nas obrigações burocráticas do dia a dia.</source>
+        <target>Complete administrative support for businesses and individuals. Document management, secretarial services, and help with day-to-day bureaucratic obligations.</target>
       </trans-unit>
       <trans-unit id="service.irs.name" datatype="html">
-        <source>IRS</source>
-        <target>IRS (Income Tax)</target>
+        <source>Análise e Entrega do IRS</source>
+        <target>IRS Analysis and Filing</target>
       </trans-unit>
       <trans-unit id="service.irs.desc" datatype="html">
-        <source>Entrega de declarações de IRS para trabalhadores por conta de outrem e independentes. Optimização fiscal e reembolso máximo.</source>
-        <target>IRS tax return filing for employees and self-employed individuals. Tax optimisation and maximum refund.</target>
+        <source>Análise e entrega de declarações de IRS para trabalhadores por conta de outrem e independentes. Optimização fiscal e reembolso máximo.</source>
+        <target>Analysis and filing of IRS tax returns for employees and self-employed individuals. Tax optimisation and maximum refund.</target>
+      </trans-unit>
+      <trans-unit id="service.intermediacaoApoio.name" datatype="html">
+        <source>Intermediação de Actividades de Serviços de Apoio aos Negócios</source>
+        <target>Intermediation of Business Support Services</target>
+      </trans-unit>
+      <trans-unit id="service.intermediacaoApoio.desc" datatype="html">
+        <source>Intermediação e coordenação de serviços de apoio às empresas. Ligação com fornecedores, parceiros e entidades externas para simplificar a gestão do negócio.</source>
+        <target>Intermediation and coordination of business support services. Liaison with suppliers, partners, and external entities to simplify business management.</target>
+      </trans-unit>
+      <trans-unit id="service.orcamentista.name" datatype="html">
+        <source>Orçamentista</source>
+        <target>Cost Estimator</target>
+      </trans-unit>
+      <trans-unit id="service.orcamentista.desc" datatype="html">
+        <source>Elaboração de orçamentos detalhados para obras, projectos e serviços. Análise de custos e apoio na negociação com fornecedores e empreiteiros.</source>
+        <target>Preparation of detailed budgets for works, projects, and services. Cost analysis and support in negotiations with suppliers and contractors.</target>
       </trans-unit>
     </body>
   </file>
