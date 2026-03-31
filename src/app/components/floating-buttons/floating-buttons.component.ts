@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, PLATFORM_ID, inject, signal } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { COMPANY } from '../../shared/company.config';
 
 @Component({
   selector: 'app-floating-buttons',
@@ -11,6 +12,7 @@ import { isPlatformBrowser } from '@angular/common';
 export class FloatingButtonsComponent {
   private platformId = inject(PLATFORM_ID);
 
+  readonly company = COMPANY;
   isOpen = signal(false);
 
   toggle(): void {

@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, PLATFORM_ID, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { COMPANY } from '../../shared/company.config';
 
 @Component({
   selector: 'app-cta-section',
@@ -10,6 +11,7 @@ import { isPlatformBrowser } from '@angular/common';
 })
 export class CtaSectionComponent {
   private platformId = inject(PLATFORM_ID);
+  readonly company = COMPANY;
 
   scrollToForm(): void {
     if (isPlatformBrowser(this.platformId)) {

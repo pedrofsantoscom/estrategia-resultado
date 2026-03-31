@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { COMPANY } from '../../shared/company.config';
 
 @Component({
   selector: 'app-footer',
@@ -8,5 +9,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FooterComponent {
+  readonly company = COMPANY;
   year = new Date().getFullYear();
 }

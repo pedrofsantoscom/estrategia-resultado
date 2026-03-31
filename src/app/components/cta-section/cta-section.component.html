@@ -18,7 +18,7 @@
 
       <!-- Phone -->
       <a
-        href="tel:+351924091647"
+        [href]="company.phoneUrl"
         class="flex flex-col items-center text-center p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-er-gold/15 hover:border-er-gold/40 transition-all duration-200 group"
       >
         <div class="w-14 h-14 rounded-2xl bg-er-gold/20 group-hover:bg-er-gold/30 flex items-center justify-center mb-4 transition-colors">
@@ -27,12 +27,12 @@
           </svg>
         </div>
         <h3 class="font-semibold text-white text-base mb-1" i18n="@@cta.phone.title">Telefone</h3>
-        <p class="text-white/60 text-sm group-hover:text-white/80 transition-colors">+351 924 091 647</p>
+        <p class="text-white/60 text-sm group-hover:text-white/80 transition-colors">{{ company.phoneDisplay }}</p>
       </a>
 
       <!-- Email -->
       <a
-        href="mailto:geral@estrategiaeresultado.pt"
+        [href]="company.emailUrl"
         class="flex flex-col items-center text-center p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-er-gold/15 hover:border-er-gold/40 transition-all duration-200 group"
       >
         <div class="w-14 h-14 rounded-2xl bg-er-gold/20 group-hover:bg-er-gold/30 flex items-center justify-center mb-4 transition-colors">
@@ -41,12 +41,12 @@
           </svg>
         </div>
         <h3 class="font-semibold text-white text-base mb-1">Email</h3>
-        <p class="text-white/60 text-sm group-hover:text-white/80 transition-colors break-all">geral&#64;estrategiaeresultado.pt</p>
+        <p class="text-white/60 text-sm group-hover:text-white/80 transition-colors break-all">{{ company.email }}</p>
       </a>
 
       <!-- WhatsApp -->
       <a
-        href="https://wa.me/351924091647"
+        [href]="company.whatsappUrl"
         target="_blank"
         rel="noopener noreferrer"
         class="flex flex-col items-center text-center p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-er-gold/15 hover:border-er-gold/40 transition-all duration-200 group"
@@ -57,7 +57,7 @@
           </svg>
         </div>
         <h3 class="font-semibold text-white text-base mb-1">WhatsApp</h3>
-        <p class="text-white/60 text-sm group-hover:text-white/80 transition-colors">+351 924 091 647</p>
+        <p class="text-white/60 text-sm group-hover:text-white/80 transition-colors">{{ company.phoneDisplay }}</p>
       </a>
 
       <!-- Contact Form -->

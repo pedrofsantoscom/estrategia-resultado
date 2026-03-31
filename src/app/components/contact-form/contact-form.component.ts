@@ -14,6 +14,7 @@ import { lastValueFrom } from 'rxjs';
 import { SERVICES } from '../services-section/services-section.component';
 import { ApiService } from '../../services/api.service';
 import { environment } from '../../../environments/environment';
+import { COMPANY } from '../../shared/company.config';
 
 @Component({
   selector: 'app-contact-form',
@@ -28,6 +29,7 @@ export class ContactFormComponent implements OnChanges {
   private platformId = inject(PLATFORM_ID);
   private api = inject(ApiService);
 
+  readonly company = COMPANY;
   services = SERVICES;
   turnstileSiteKey = environment.turnstileSiteKey;
   form: FormGroup;

@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { COMPANY } from '../../shared/company.config';
 
 @Component({
   selector: 'app-contacts',
@@ -7,4 +8,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   templateUrl: './contacts.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ContactsComponent {}
+export class ContactsComponent {
+  readonly company = COMPANY;
+}
