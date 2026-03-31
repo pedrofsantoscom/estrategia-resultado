@@ -42,14 +42,16 @@ if (($config['turnstile_secret_key'] ?? '') !== 'dev') {
 }
 
 $validServices = [
-    'Fiscalidade e Contabilidade',
-    'Consultoria Jurídica',
-    'Consultoria de Empresas',
-    'Gestão de Rendas',
-    'Crédito',
+    'Intermediação de Crédito',
+    'Serviços Jurídicos',
     'Seguros',
-    'Apoio a Negócios',
-    'IRS',
+    'Apoio Administrativo',
+    'Consultadoria Empresarial',
+    'Fiscalidade e Contabilidade',
+    'Análise e Entrega do IRS',
+    'Gestão de Rendas',
+    'Intermediação de Actividades de Serviços de Apoio aos Negócios',
+    'Orçamentista',
 ];
 
 $v = new Validator();

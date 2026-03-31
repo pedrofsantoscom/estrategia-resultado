@@ -5,7 +5,9 @@
 - **Nome**: Estratégia & Resultado
 - **Tipo**: Agência de Consultoria
 - **Localização**: Guimarães, Portugal
-- **Serviços**: Fiscalidade e Contabilidade, Jurídico, Consultoria de Empresas, Rendas, Crédito, Seguros, Apoio a Negócios, IRS
+- **Serviços**: Intermediação de Crédito, Serviços Jurídicos, Seguros, Apoio Administrativo, Consultadoria Empresarial, Fiscalidade e Contabilidade, Análise e Entrega do IRS, Gestão de Rendas, Intermediação de Actividades de Serviços de Apoio aos Negócios, Orçamentista
+- **Telefone**: +351 924 091 647 (WhatsApp: 351924091647)
+- **Tagline**: "Tratamos do que é burocrático, técnico ou complexo."
 - **Facebook**: https://www.facebook.com/61588117696445/
 - **Identidade visual**: Ouro/âmbar (primário), azul-marinho escuro/preto (secundário), tons de azul (destaque) — com imagens de montanha/ponte
 

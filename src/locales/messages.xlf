@@ -409,7 +409,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="hero.tagline" datatype="html">
-        <source> Consultoria abrangente para empresas e particulares em Guimarães. </source>
+        <source> Tratamos do que é burocrático, técnico ou complexo. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/hero/hero.component.html</context>
           <context context-type="linenumber">36,38</context>
@@ -821,7 +821,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="service.juridica.name" datatype="html">
-        <source>Consultoria Jurídica</source>
+        <source>Serviços Jurídicos</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/services-section/services-section.component.ts</context>
           <context context-type="linenumber">20</context>
@@ -835,7 +835,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="service.empresas.name" datatype="html">
-        <source>Consultoria de Empresas</source>
+        <source>Consultadoria Empresarial</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/services-section/services-section.component.ts</context>
           <context context-type="linenumber">26</context>
@@ -863,14 +863,14 @@
         </context-group>
       </trans-unit>
       <trans-unit id="service.credito.name" datatype="html">
-        <source>Crédito</source>
+        <source>Intermediação de Crédito</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/services-section/services-section.component.ts</context>
           <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit>
       <trans-unit id="service.credito.desc" datatype="html">
-        <source>Intermediação e aconselhamento em crédito habitação, crédito pessoal e financiamento empresarial. Encontramos as melhores condições.</source>
+        <source>Intermediação e aconselhamento em crédito habitação, crédito pessoal e financiamento empresarial. Encontramos as melhores condições para o seu perfil.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/services-section/services-section.component.ts</context>
           <context context-type="linenumber">39</context>
@@ -891,31 +891,59 @@
         </context-group>
       </trans-unit>
       <trans-unit id="service.negocios.name" datatype="html">
-        <source>Apoio a Negócios</source>
+        <source>Apoio Administrativo</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/services-section/services-section.component.ts</context>
           <context context-type="linenumber">50</context>
         </context-group>
       </trans-unit>
       <trans-unit id="service.negocios.desc" datatype="html">
-        <source>Suporte completo ao empreendedor. Constituição de empresas, licenciamentos, candidaturas a fundos europeus e apoio à expansão.</source>
+        <source>Suporte administrativo completo a empresas e particulares. Gestão documental, secretariado e apoio nas obrigações burocráticas do dia a dia.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/services-section/services-section.component.ts</context>
           <context context-type="linenumber">51</context>
         </context-group>
       </trans-unit>
       <trans-unit id="service.irs.name" datatype="html">
-        <source>IRS</source>
+        <source>Análise e Entrega do IRS</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/services-section/services-section.component.ts</context>
           <context context-type="linenumber">56</context>
         </context-group>
       </trans-unit>
       <trans-unit id="service.irs.desc" datatype="html">
-        <source>Entrega de declarações de IRS para trabalhadores por conta de outrem e independentes. Optimização fiscal e reembolso máximo.</source>
+        <source>Análise e entrega de declarações de IRS para trabalhadores por conta de outrem e independentes. Optimização fiscal e reembolso máximo.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/services-section/services-section.component.ts</context>
           <context context-type="linenumber">57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="service.intermediacaoApoio.name" datatype="html">
+        <source>Intermediação de Actividades de Serviços de Apoio aos Negócios</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/services-section/services-section.component.ts</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="service.intermediacaoApoio.desc" datatype="html">
+        <source>Intermediação e coordenação de serviços de apoio às empresas. Ligação com fornecedores, parceiros e entidades externas para simplificar a gestão do negócio.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/services-section/services-section.component.ts</context>
+          <context context-type="linenumber">74</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="service.orcamentista.name" datatype="html">
+        <source>Orçamentista</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/services-section/services-section.component.ts</context>
+          <context context-type="linenumber">79</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="service.orcamentista.desc" datatype="html">
+        <source>Elaboração de orçamentos detalhados para obras, projectos e serviços. Análise de custos e apoio na negociação com fornecedores e empreiteiros.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/services-section/services-section.component.ts</context>
+          <context context-type="linenumber">80</context>
         </context-group>
       </trans-unit>
     </body>
