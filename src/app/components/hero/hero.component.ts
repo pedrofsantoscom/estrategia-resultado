@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-hero',
@@ -8,10 +8,15 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angul
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeroComponent {
-  @Output() openModal = new EventEmitter<void>();
-
   scrollToServices(): void {
     const el = document.getElementById('servicos');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  scrollToContacts(): void {
+    const el = document.getElementById('contactos');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     }
