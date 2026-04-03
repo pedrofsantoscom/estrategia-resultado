@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, inject, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 export interface Service {
   id: string;
@@ -69,7 +70,18 @@ export const SERVICES: Service[] = [
     description: $localize`:@@service.orcamentista.desc:Elaboração de orçamentos detalhados para obras, projectos e serviços. Análise de custos e apoio na negociação com fornecedores e empreiteiros.`,
     icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 15.75V18m-7.5-6.75h.008v.008H8.25v-.008Zm0 2.25h.008v.008H8.25V13.5Zm0 2.25h.008v.008H8.25v-.008Zm0 2.25h.008v.008H8.25V18Zm2.498-6.75h.007v.008h-.007v-.008Zm0 2.25h.007v.008h-.007V13.5Zm0 2.25h.007v.008h-.007v-.008Zm0 2.25h.007v.008h-.007V18Zm2.504-6.75h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V13.5Zm0 2.25h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V18Zm2.498-6.75h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V13.5ZM8.25 6h7.5v2.25h-7.5V6ZM12 2.25c-1.892 0-3.758.11-5.593.322C5.307 2.7 4.5 3.65 4.5 4.757V19.5a2.25 2.25 0 0 0 2.25 2.25h10.5a2.25 2.25 0 0 0 2.25-2.25V4.757c0-1.108-.806-2.057-1.907-2.185A48.507 48.507 0 0 0 12 2.25Z" /></svg>`,
   },
+  {
+    id: 'outros',
+    name: $localize`:@@service.outros.name:Outros`,
+    description: $localize`:@@service.outros.desc:Tem uma necessidade que não se enquadra nos serviços listados? Fale connosco — encontramos a solução certa para si.`,
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>`,
+  },
 ];
+
+export interface SafeService extends Omit<Service, 'icon'> {
+  icon: string;
+  safeIcon: SafeHtml;
+}
 
 @Component({
   selector: 'app-services-section',
@@ -81,7 +93,11 @@ export const SERVICES: Service[] = [
 export class ServicesSectionComponent {
   @Output() contactService = new EventEmitter<string>();
 
-  services = SERVICES;
+  private sanitizer = inject(DomSanitizer);
+  services: SafeService[] = SERVICES.map(s => ({
+    ...s,
+    safeIcon: this.sanitizer.bypassSecurityTrustHtml(s.icon),
+  }));
 
   onContactService(serviceName: string): void {
     this.contactService.emit(serviceName);

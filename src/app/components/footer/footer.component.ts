@@ -11,4 +11,11 @@ import { COMPANY } from '../../shared/company.config';
 export class FooterComponent {
   readonly company = COMPANY;
   year = new Date().getFullYear();
+
+  scrollTo(id: string): void {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }

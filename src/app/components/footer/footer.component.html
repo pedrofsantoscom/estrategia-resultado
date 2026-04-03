@@ -5,18 +5,20 @@
       <!-- Brand -->
       <div class="text-center md:text-left">
         <div class="font-display font-bold text-white text-lg mb-1">{{ company.name }}</div>
-        <p class="text-white/40 text-sm" i18n="@@footer.tagline">Consultoria em Guimarães</p>
+        <p class="text-white/60 text-sm" i18n="@@footer.tagline">Consultoria em Guimarães</p>
       </div>
 
       <!-- Links -->
       <nav class="flex flex-wrap justify-center gap-x-6 gap-y-2">
         <a [href]="company.emailUrl" class="text-white/60 hover:text-er-gold text-sm transition-colors">Email</a>
         <a [href]="company.phoneUrl" class="text-white/60 hover:text-er-gold text-sm transition-colors" i18n="@@footer.phone">Telefone</a>
+        <a [href]="company.whatsappUrl" target="_blank" rel="noopener noreferrer" class="text-white/60 hover:text-er-gold text-sm transition-colors">WhatsApp</a>
         <a [href]="company.social.facebook" target="_blank" rel="noopener noreferrer" class="text-white/60 hover:text-er-gold text-sm transition-colors">Facebook</a>
+        <button (click)="scrollTo('formulario')" class="text-white/60 hover:text-er-gold text-sm transition-colors" i18n="@@footer.form">Formulário</button>
       </nav>
 
       <!-- Copyright -->
-      <p class="text-white/40 text-xs text-center md:text-right" i18n="@@footer.copyright">
+      <p class="text-white/60 text-xs text-center md:text-right" i18n="@@footer.copyright">
         &copy; {{ year }} Estratégia &amp; Resultado.<br class="sm:hidden"> Todos os direitos reservados.
       </p>
     </div>

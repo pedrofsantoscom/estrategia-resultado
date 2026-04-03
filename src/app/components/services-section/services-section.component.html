@@ -3,11 +3,11 @@
 
     <!-- Section header -->
     <div class="text-center mb-14">
-      <p class="text-er-gold font-semibold text-sm tracking-widest uppercase mb-3" i18n="@@services.label">O que fazemos</p>
+      <p class="text-er-gold-700 font-semibold text-sm tracking-widest uppercase mb-3" i18n="@@services.label">O que fazemos</p>
       <h2 class="section-heading mb-4" i18n="@@services.heading">Os Nossos Serviços</h2>
       <div class="gold-divider mx-auto mb-5"></div>
       <p class="section-subheading max-w-2xl mx-auto" i18n="@@services.subheading">
-        Soluções completas e personalizadas para particulares e empresas em Guimarães e região.
+        Soluções completas e personalizadas para particulares e empresas. Presencialmente em Guimarães e remotamente para todo o país.
       </p>
     </div>
 
@@ -17,12 +17,12 @@
         <div class="card-hover flex flex-col p-6">
           <!-- Icon -->
           <div class="w-12 h-12 rounded-xl bg-er-navy/5 flex items-center justify-center mb-4 text-er-blue flex-shrink-0">
-            <div class="w-7 h-7 text-er-blue" [innerHTML]="service.icon"></div>
+            <div class="w-7 h-7 text-er-blue" [innerHTML]="service.safeIcon"></div>
           </div>
 
           <!-- Content -->
           <h3 class="font-semibold text-er-navy text-base mb-2 leading-snug">{{ service.name }}</h3>
-          <p class="text-er-navy/60 text-sm leading-relaxed flex-1">{{ service.description }}</p>
+          <p class="text-er-navy/70 text-sm leading-relaxed flex-1">{{ service.description }}</p>
 
           <!-- CTA -->
           <button

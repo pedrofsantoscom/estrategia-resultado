@@ -11,8 +11,6 @@
       <button
         (click)="scrollTo('inicio')"
         class="flex-shrink-0 focus:outline-none"
-        aria-label="Ir para o início"
-        i18n-aria-label="@@nav.logo.ariaLabel"
       >
         <span class="font-display font-bold text-white text-lg md:text-xl leading-tight">
           Estratégia<br class="hidden sm:block">&amp; Resultado
@@ -33,11 +31,11 @@
         <app-lang-switcher class="hidden sm:block"></app-lang-switcher>
 
         <button
-          (click)="requestContact()"
+          (click)="scrollTo('formulario')"
           class="btn-primary text-xs sm:text-sm px-4 py-2 sm:px-5 sm:py-2.5"
           i18n="@@nav.cta"
         >
-          Pedir Contacto
+          Contactos
         </button>
 
         <!-- Hamburger (mobile only) -->

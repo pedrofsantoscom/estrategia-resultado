@@ -15,12 +15,12 @@
         <target> <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong class=&quot;text-white&quot;&gt;"/>Estratégia &amp; Resultado<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> is a multidisciplinary consulting firm based in Guimarães, dedicated to supporting businesses and individuals in making smarter decisions and achieving their goals. </target>
       </trans-unit>
       <trans-unit id="about.p2" datatype="html">
-        <source> Com uma equipa experiente e focada em resultados, oferecemos um serviço personalizado que cobre todas as áreas críticas da vida empresarial e pessoal — desde a fiscalidade e contabilidade à consultoria jurídica, passando pelo apoio ao negócio e gestão de seguros. </source>
-        <target> With an experienced, results-focused team, we offer a personalised service covering all critical areas of business and personal life — from taxation and accounting to legal consulting, business support, and insurance management. </target>
+        <source> Com profissionais com mais de 15 anos de experiência, oferecemos um serviço personalizado que cobre todas as áreas críticas da vida empresarial e pessoal — desde a fiscalidade e contabilidade à consultoria jurídica, passando pelo apoio ao negócio e gestão de seguros. </source>
+        <target> With professionals with over 15 years of experience, we offer a personalised service covering all critical areas of business and personal life — from taxation and accounting to legal consulting, business support, and insurance management. </target>
       </trans-unit>
       <trans-unit id="about.p3" datatype="html">
-        <source> A nossa missão é simples: transformar desafios complexos em soluções claras, para que os nossos clientes possam crescer com confiança. </source>
-        <target> Our mission is simple: transform complex challenges into clear solutions, so our clients can grow with confidence. </target>
+        <source> Tornamos o complexo em simples, para que não se tenha de preocupar com nada. A nossa missão é transformar desafios em soluções claras, para que os nossos clientes possam crescer com confiança. </source>
+        <target> We turn the complex into simple, so you don't have to worry about anything. Our mission is to transform challenges into clear solutions, so our clients can grow with confidence. </target>
       </trans-unit>
       <trans-unit id="about.value.rigor.title" datatype="html">
         <source>Rigor</source>
@@ -243,8 +243,8 @@
         <target> Taxation, Accounting, Legal, Insurance, Credit and more — everything you need, in one place. </target>
       </trans-unit>
       <trans-unit id="hero.cta.contact" datatype="html">
-        <source>Pedir Contacto</source>
-        <target>Request Callback</target>
+        <source>Contactos</source>
+        <target>Contacts</target>
       </trans-unit>
       <trans-unit id="hero.cta.services" datatype="html">
         <source>Conhecer os Serviços</source>
@@ -294,10 +294,6 @@
         <source>Morada</source>
         <target>Address</target>
       </trans-unit>
-      <trans-unit id="location.address.building" datatype="html">
-        <source>Localizado em: Peça D'Ouro E Prata</source>
-        <target>Located in: Peça D'Ouro E Prata</target>
-      </trans-unit>
       <trans-unit id="location.phone.label" datatype="html">
         <source>Telefone</source>
         <target>Phone</target>
@@ -319,8 +315,8 @@
         <target>View on Google Maps</target>
       </trans-unit>
       <trans-unit id="nav.logo.ariaLabel" datatype="html">
-        <source>Ir para o início</source>
-        <target>Go to homepage</target>
+        <source>Estratégia e Resultado — Ir para o início</source>
+        <target>Estratégia e Resultado — Go to homepage</target>
       </trans-unit>
       <trans-unit id="nav.services" datatype="html">
         <source>Serviços</source>
@@ -343,8 +339,8 @@
         <target>Form</target>
       </trans-unit>
       <trans-unit id="nav.cta" datatype="html">
-        <source> Pedir Contacto </source>
-        <target> Request Callback </target>
+        <source> Contactos </source>
+        <target> Contacts </target>
       </trans-unit>
       <trans-unit id="nav.menu.ariaLabel" datatype="html">
         <source>Abrir menu</source>
@@ -537,6 +533,26 @@
       <trans-unit id="service.orcamentista.desc" datatype="html">
         <source>Elaboração de orçamentos detalhados para obras, projectos e serviços. Análise de custos e apoio na negociação com fornecedores e empreiteiros.</source>
         <target>Preparation of detailed budgets for works, projects, and services. Cost analysis and support in negotiations with suppliers and contractors.</target>
+      </trans-unit>
+      <trans-unit id="service.outros.name" datatype="html">
+        <source>Outros</source>
+        <target>Other</target>
+      </trans-unit>
+      <trans-unit id="service.outros.desc" datatype="html">
+        <source>Tem uma necessidade que não se enquadra nos serviços listados? Fale connosco — encontramos a solução certa para si.</source>
+        <target>Have a need that doesn't fit the listed services? Talk to us — we'll find the right solution for you.</target>
+      </trans-unit>
+      <trans-unit id="hero.cta.callback" datatype="html">
+        <source>Pedir Contacto</source>
+        <target>Request Callback</target>
+      </trans-unit>
+      <trans-unit id="hero.freeConsultation" datatype="html">
+        <source>Agende uma consulta online sem custos.</source>
+        <target>Schedule a free online consultation.</target>
+      </trans-unit>
+      <trans-unit id="footer.form" datatype="html">
+        <source>Formulário</source>
+        <target>Contact Form</target>
       </trans-unit>
     </body>
   </file>
