@@ -45,5 +45,8 @@ backend/config.php
 backend/vendor/
 backend/tmp/**/*.json
 
+# Claude
+.claude/
+
 # Misc
 *.pem
